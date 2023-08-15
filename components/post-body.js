@@ -1,4 +1,5 @@
 import { StructuredText, Image } from "react-datocms";
+import { Splide } from "@splidejs/react-splide";
 
 export default function PostBody({ content }) {
   return (
@@ -16,6 +17,30 @@ export default function PostBody({ content }) {
                   <source src={record.video.url} type={record.video.mimeType} />
                 </video>
               );
+            }
+            if (record.__typename === "GalleryBlockRecord") {
+              return;
+              <Splide
+                options={{
+                  perPage: 1,
+                  height: "fit-content",
+                  rewind: true,
+                  gap: "2rem",
+                  paginationKeyboard: true,
+                  drag: true,
+                  padding: { left: "0.5rem", right: "0.5rem" },
+                }}
+                onMoved={(splide, newIndex) => {}}
+              >
+                {record.gallery.map((item: any, i: number) => (
+                  <SplideSlide>
+                    <img
+                      src="{record.image.responsiveImage}"
+                      alt="{record.image.alt}"
+                    />
+                  </SplideSlide>
+                ))}
+              </Splide>;
             }
             return (
               <>

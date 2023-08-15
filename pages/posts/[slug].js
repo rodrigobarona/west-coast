@@ -50,7 +50,7 @@ export async function getStaticProps({ params, preview = false, locale }) {
               ...on ImageBlockRecord {
                 id
                 image {
-                  responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 2000, h: 1000 }) {
+                  responsiveImage(imgixParams: {auto:fm}) {
                     ...responsiveImageFragment
                   }
                 }
@@ -63,6 +63,15 @@ export async function getStaticProps({ params, preview = false, locale }) {
                     thumbnailUrl
                   }
                   mimeType
+                }
+              }
+              ... on GalleryBlockRecord {
+                id
+                alt
+                gallery {
+                  responsiveImage(imgixParams: {auto:fm}) {
+                    ...responsiveImageFragment
+                  }
                 }
               }
             }

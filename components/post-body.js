@@ -32,7 +32,7 @@ export default function PostBody({ content }) {
                 }}
                 onMoved={(splide, newIndex) => {}}
               >
-                {record.gallery.map((item: any, i: number) => (
+                {record.gallery.map(() => (
                   <SplideSlide>
                     <img
                       src="{record.image.responsiveImage}"

@@ -10,7 +10,13 @@ export default function PostBody({ content }) {
             if (record.__typename === "ImageBlockRecord") {
               return <Image data={record.image.responsiveImage} />;
             }
-
+            if (record.__typename === "VideoBlockRecord") {
+              return (
+                <video>
+                  <source src={record.video.url} />
+                </video>
+              );
+            }
             return (
               <>
                 <p>Don't know how to render a block!</p>

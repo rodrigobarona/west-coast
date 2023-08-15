@@ -1,5 +1,5 @@
 import { StructuredText, Image } from "react-datocms";
-import { Splide } from "@splidejs/react-splide";
+import { Splide, SplideSlide } from "@splidejs/react-splide";
 
 export default function PostBody({ content }) {
   return (

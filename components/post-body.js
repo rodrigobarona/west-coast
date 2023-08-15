@@ -19,28 +19,29 @@ export default function PostBody({ content }) {
               );
             }
             if (record.__typename === "GalleryBlockRecord") {
-              return;
-              <Splide
-                options={{
-                  perPage: 1,
-                  height: "fit-content",
-                  rewind: true,
-                  gap: "2rem",
-                  paginationKeyboard: true,
-                  drag: true,
-                  padding: { left: "0.5rem", right: "0.5rem" },
-                }}
-                onMoved={(splide, newIndex) => {}}
-              >
-                {record.gallery.map(() => (
-                  <SplideSlide>
-                    <img
-                      src="{record.image.responsiveImage}"
-                      alt="{record.image.alt}"
-                    />
-                  </SplideSlide>
-                ))}
-              </Splide>;
+              return (
+                <Splide
+                  options={{
+                    perPage: 1,
+                    height: "fit-content",
+                    rewind: true,
+                    gap: "2rem",
+                    paginationKeyboard: true,
+                    drag: true,
+                    padding: { left: "0.5rem", right: "0.5rem" },
+                  }}
+                  onMoved={(splide, newIndex) => {}}
+                >
+                  {record.gallery.map(() => (
+                    <SplideSlide>
+                      <img
+                        src="{record.image.responsiveImage}"
+                        alt="{record.image.alt}"
+                      />
+                    </SplideSlide>
+                  ))}
+                </Splide>
+              );
             }
             return (
               <>

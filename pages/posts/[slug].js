@@ -67,7 +67,6 @@ export async function getStaticProps({ params, preview = false, locale }) {
               }
               ... on GalleryBlockRecord {
                 id
-                alt
                 gallery {
                   responsiveImage(imgixParams: {auto:fm}) {
                     ...responsiveImageFragment

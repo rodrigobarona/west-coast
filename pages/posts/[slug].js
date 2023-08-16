@@ -65,14 +65,6 @@ export async function getStaticProps({ params, preview = false, locale }) {
                   mimeType
                 }
               }
-              ... on GalleryBlockRecord {
-                id
-                gallery {
-                  responsiveImage(imgixParams: {auto:fm}) {
-                    ...responsiveImageFragment
-                  }
-                }
-              }
             }
           }
           date

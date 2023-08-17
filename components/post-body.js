@@ -28,11 +28,10 @@ export default function PostBody({ content }) {
                     perPage: 1,
                     height: "fit-content",
                     rewind: true,
-                    gap: "2rem",
+                    gap: "1px",
+                    padding: 0,
                     paginationKeyboard: true,
-                    drag: true,
-               
-                    padding: { left: "0.5rem", right: "0.5rem" },
+                    drag: true
                   }}
                   
                   onMoved={(splide, newIndex) => {}}

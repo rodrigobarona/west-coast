@@ -1,8 +1,8 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/bin/yarn add sass
+  /usr/local/bin/node /usr/local/bin/yarn install
 
 PATH: 
-  /usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin
+  /node18/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin
 
 Yarn version: 
   1.22.19
@@ -33,6 +33,7 @@ npm manifest:
     "dependencies": {
       "@datocms/cma-client": "^1.1.10",
       "@datocms/cma-client-node": "^1.1.10",
+      "@splidejs/splide": "^4.1.4",
       "@splidejs/react-splide": "^0.7.12",
       "classnames": "2.3.1",
       "date-fns": "2.21.1",
@@ -40,6 +41,7 @@ npm manifest:
       "react": "^17.0.2",
       "react-datocms": "^3.1.1",
       "react-dom": "^17.0.2",
+      "sass": "^1.65.1",
       "tiny-json-http": "^7.3.0"
     },
     "devDependencies": {

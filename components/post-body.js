@@ -1,7 +1,7 @@
 import { StructuredText, Image } from "react-datocms";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
-import '@splidejs/react-splide/css';
-import styles from "./post-body.module.scss";
+import "@splidejs/splide/dist/css/splide.min.css";
+import styles from './post-body.module.scss';
 
 export default function PostBody({ content }) {
   return (

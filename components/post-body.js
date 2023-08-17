@@ -1,6 +1,5 @@
 import { StructuredText, Image } from "react-datocms";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
-import "@splidejs/splide/dist/css/splide.min.css";
 import styles from './post-body.module.scss';
 
 export default function PostBody({ content }) {
@@ -31,8 +30,10 @@ export default function PostBody({ content }) {
                     gap: "2rem",
                     paginationKeyboard: true,
                     drag: true,
+               
                     padding: { left: "0.5rem", right: "0.5rem" },
                   }}
+                  
                   onMoved={(splide, newIndex) => {}}
                 >
                  

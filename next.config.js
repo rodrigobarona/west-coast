@@ -1,6 +1,9 @@
 require("dotenv").config();
 
 module.exports = {
+  sassOptions: {
+    fiber: false
+  },
   i18n: {
     locales: ["pt", "es", "en"],
     defaultLocale: "pt",

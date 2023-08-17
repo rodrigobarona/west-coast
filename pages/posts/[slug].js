@@ -61,7 +61,7 @@ export async function getStaticProps({ params, preview = false, locale }) {
                   url
                   video {
                     thumbnailUrl
-                    mp4Url(res: medium)
+                    mp4Url(res: high)
                   }
                   mimeType
                 }

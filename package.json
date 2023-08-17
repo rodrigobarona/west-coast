@@ -9,12 +9,14 @@
   "dependencies": {
     "@datocms/cma-client": "^1.1.10",
     "@datocms/cma-client-node": "^1.1.10",
+    "@splidejs/react-splide": "^0.7.12",
     "classnames": "2.3.1",
     "date-fns": "2.21.1",
     "next": "^12.3.1",
     "react": "^17.0.2",
     "react-datocms": "^3.1.1",
     "react-dom": "^17.0.2",
+    "sass": "^1.65.1",
     "tiny-json-http": "^7.3.0"
   },
   "devDependencies": {

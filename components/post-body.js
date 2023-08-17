@@ -1,4 +1,7 @@
 import { StructuredText, Image } from "react-datocms";
+import { Splide, SplideSlide } from "@splidejs/react-splide";
+import '@splidejs/react-splide/css';
+import styles from "./index.module.scss";
 
 export default function PostBody({ content }) {
   return (
@@ -15,6 +18,34 @@ export default function PostBody({ content }) {
                 <video controls poster={record.video.thumbnailUrl}>
                   <source src={record.video.url} type={record.video.mimeType} />
                 </video>
+              );
+            }
+            if (record.__typename === "GalleryBlockRecord") {
+              return (
+                <div className={`${styles.removeprose} `}>
+                <Splide 
+                  options={{
+                    perPage: 1,
+                    height: "fit-content",
+                    rewind: true,
+                    gap: "2rem",
+                    paginationKeyboard: true,
+                    drag: true,
+                    padding: { left: "0.5rem", right: "0.5rem" },
+                  }}
+                  onMoved={(splide, newIndex) => {}}
+                >
+                 
+                  {record.gallery.map(( slide, index ) => (
+                    
+                    <SplideSlide  key={ index }>
+                      <img
+                        src={slide.url}
+                        alt={slide.alt}
+                      />
+                    </SplideSlide>
+                  ))}
+                </Splide></div>
               );
             }
             return (

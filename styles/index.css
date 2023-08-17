@@ -3,6 +3,3 @@
 @tailwind components;
 /* purgecss end ignore */
 @tailwind utilities;
-
-/* https://splidejs.com/guides/getting-started/ */
-@splidejs /splide/css;

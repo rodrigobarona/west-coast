@@ -68,7 +68,6 @@ export async function getStaticProps({ params, preview = false, locale }) {
               }
               ... on GalleryBlockRecord {
                 id
-                
                 gallery {
                   alt
                   url(imgixParams: {auto: format, fit: crop, w: 1000, h: 1000, crop: focalpoint})

@@ -1,3 +1,4 @@
+import React from "react";
 import { StructuredText, Image } from "react-datocms";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import styles from './post-body.module.scss';

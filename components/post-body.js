@@ -16,7 +16,7 @@ export default function PostBody({ content }) {
             if (record.__typename === "VideoBlockRecord") {
               return (
                 <video controls poster={record.video.video.thumbnailUrl}>
-                  <source src={record.video.video.mp4Url} type={record.video.mimeType} />
+                  <source src={record.video.video.mp4Url} type="video/mp4" />
                 </video>
               );
             }

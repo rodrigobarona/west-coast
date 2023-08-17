@@ -37,14 +37,14 @@ export default function PostBody({ content }) {
                 >
                  
                   {record.gallery.map(( slide, index ) => (
-                    
-                    <SplideSlide  key={ index }>
+                    <SplideSlide key={ index }>
                       <img
                         src={slide.url}
                         alt={slide.alt}
                       />
                     </SplideSlide>
                   ))}
+
                 </Splide></div>
               );
             }

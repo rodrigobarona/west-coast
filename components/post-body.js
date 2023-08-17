@@ -22,7 +22,7 @@ export default function PostBody({ content }) {
             }
             if (record.__typename === "GalleryBlockRecord") {
               return (
-               
+                <div className={`${styles.removeprose}`}>
                 <Splide 
                   options={{
                     perPage: 1,
@@ -47,7 +47,7 @@ export default function PostBody({ content }) {
                     </SplideSlide>
                   ))}
 
-                </Splide>
+                </Splide></div>
               );
             }
             return (

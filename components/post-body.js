@@ -1,7 +1,7 @@
 import React from "react";
 import { StructuredText, Image } from "react-datocms";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
-import styles from './post-body.module.scss';
+
 
 export default function PostBody({ content }) {
   return (
@@ -22,7 +22,7 @@ export default function PostBody({ content }) {
             }
             if (record.__typename === "GalleryBlockRecord") {
               return (
-                <div className={`${styles.removeprose}`}>
+                <div className="non-prose">
                 <Splide 
                   options={{
                     perPage: 1,

@@ -1,4 +1,5 @@
 import { StructuredText, Image } from "react-datocms";
+import '@splidejs/splide/dist/css/themes/splide-default.min.css';
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import styles from './post-body.module.css';
 

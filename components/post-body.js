@@ -21,7 +21,7 @@ export default function PostBody({ content }) {
             }
             if (record.__typename === "GalleryBlockRecord") {
               return (
-                <div className={styles.removeProse}>
+                <div className={`${styles.removeProse}`}>
                 <Splide 
                   options={{
                     perPage: 1,

@@ -1,8 +1,8 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/bin/yarn install
+  /usr/local/bin/node /usr/local/bin/yarn global add vercel@latest
 
 PATH: 
-  /node18/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin
+  /usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin
 
 Yarn version: 
   1.22.19
@@ -33,14 +33,16 @@ npm manifest:
     "dependencies": {
       "@datocms/cma-client": "^1.1.10",
       "@datocms/cma-client-node": "^1.1.10",
-      "@splidejs/splide": "^4.1.4",
       "@splidejs/react-splide": "^0.7.12",
+      "@splidejs/splide": "^4.1.4",
+      "@splidejs/splide-extension-auto-scroll": "^0.5.3",
       "classnames": "2.3.1",
       "date-fns": "2.21.1",
-      "next": "^12.3.1",
-      "react": "^17.0.2",
+      "eslint-config-next": "^13.4.18",
+      "next": "^13.4.18",
+      "react": "^18.2.0",
       "react-datocms": "^3.1.1",
-      "react-dom": "^17.0.2",
+      "react-dom": "^18.2.0",
       "sass": "^1.65.1",
       "tiny-json-http": "^7.3.0"
     },

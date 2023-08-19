@@ -49,9 +49,6 @@ dependencies:
   react-dom:
     specifier: 18.2.0
     version: 18.2.0(react@18.2.0)
-  react-multi-carousel:
-    specifier: ^2.8.4
-    version: 2.8.4
   tailwindcss:
     specifier: 3.3.3
     version: 3.3.3
@@ -2442,11 +2439,6 @@ packages:
 
   /react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
-    dev: false
-
-  /react-multi-carousel@2.8.4:
-    resolution: {integrity: sha512-7Is5Wr+m2ebkR+oq2Su2tjUdBwpVtB2O6Tjb74KDNfxWe/FrsTQwezTJTk/r9cKCrRp9Li308v822/5bZm7XKg==}
-    engines: {node: '>=8'}
     dev: false
 
   /react-string-replace@1.1.1:

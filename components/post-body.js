@@ -79,9 +79,7 @@ export default function PostBody({ content }) {
                         height={1000} 
                         alt={slide.alt} 
                         quality={100}
-                        placeholder="blur"
                         loading="lazy"
-                        blurDataURL={slide.blurUpThumb} 
                         />
                     </SplideSlide>
                   ))}

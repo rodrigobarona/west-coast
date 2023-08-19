@@ -8,14 +8,6 @@ import '@splidejs/react-splide/css';
 export default function PostBody({ content }) {
   return (
     <div className="max-w-2xl mx-auto">
-      <Splide aria-label="My Favorite Images">
-        <SplideSlide>
-          <img src="https://placehold.co/600x400" alt="Image 1" />
-        </SplideSlide>
-        <SplideSlide>
-          <img src="https://placehold.co/600x400" alt="Image 2" />
-        </SplideSlide>
-      </Splide>
       <div className="prose prose-lg prose-blue">
         <StructuredText
           data={content}

@@ -82,17 +82,17 @@ export async function getStaticProps({ params, preview = false, locale }) {
           }
           date
           ogImage: coverImage{
-            url(imgixParams: {fm: jpg, fit: crop, w: 2000, h: 1000 })
+            url(imgixParams: {auto: format, fit: crop, w: 2000, h: 1000 })
           }
           coverImage {
-            responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 2000, h: 1000 }) {
+            responsiveImage(imgixParams: {auto: format, fit: crop, w: 2000, h: 1000 }) {
               ...responsiveImageFragment
             }
           }
           author {
             name
             picture {
-              url(imgixParams: {fm: jpg, fit: crop, w: 100, h: 100, sat: -100})
+              url(imgixParams: {auto: format, fit: crop, w: 100, h: 100, sat: -100})
             }
           }
         }
@@ -110,7 +110,7 @@ export async function getStaticProps({ params, preview = false, locale }) {
           author {
             name
             picture {
-              url(imgixParams: {fm: jpg, fit: crop, w: 100, h: 100, sat: -100})
+              url(imgixParams: {auto: format, fit: crop, w: 100, h: 100, sat: -100})
             }
           }
         }

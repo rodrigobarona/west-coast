@@ -32,14 +32,14 @@ export async function getStaticProps({preview, locale}) {
           excerpt
           date
           coverImage {
-            responsiveImage(imgixParams: {fm: jpg, fit: crop, w: 2000, h: 1000 }) {
+            responsiveImage(imgixParams: {auto: format, fit: crop, w: 2000, h: 1000 }) {
               ...responsiveImageFragment
             }
           }
           author {
             name
             picture {
-              url(imgixParams: {fm: jpg, fit: crop, w: 100, h: 100, sat: -100})
+              url(imgixParams: {auto: format, fit: crop, w: 100, h: 100, sat: -100})
             }
           }
         }

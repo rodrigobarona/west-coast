@@ -1,8 +1,5 @@
 import { StructuredText } from "react-datocms";
 import Image from 'next/image'
-import Carousel from 'react-multi-carousel';
-import 'react-multi-carousel/lib/styles.css';
-import styles from './post-body.module.css';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
 

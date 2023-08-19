@@ -58,7 +58,7 @@ export default function Search(props) {
                     </Link>
                   </h3>
                   <p className="text-lg leading-relaxed mb-4">
-                    "{result.bodyExcerpt}"
+                    {result.bodyExcerpt}
                   </p>
                 </div>
               );

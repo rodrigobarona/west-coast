@@ -2,6 +2,8 @@ import { StructuredText, Image } from "react-datocms";
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import styles from './post-body.module.css';
+import { Splide, SplideSlide } from '@splidejs/react-splide';
+import '@splidejs/react-splide/css';
 
 export default function PostBody({ content }) {
   return (
@@ -39,31 +41,38 @@ export default function PostBody({ content }) {
                   slidesToSlide: 1 // optional, default to 1.
                 }
               };
-              
+
               return (
                 <div className={`${styles.removeProse}`}>
-                <Carousel
-                  swipeable={true}
-                  draggable={false}
-                  showDots={true}
-                  responsive={responsive}
+                  <Splide 
+                  options={{
+                    perPage: 1,
+                    height: "fit-content",
+                    rewind: true,
+                    gap: "1px",
+                    padding: 0,
+                    paginationKeyboard: true,
+                    drag: true
+                  }}
+                  
+                  onMoved={(splide, newIndex) => {}}
                 >
                  
                   {record.gallery.map(( slide, index ) => (
-                    <div key={ index }>
+                    <SplideSlide key={ index }>
                       <img
                         src={slide.url}
                         alt={slide.alt}
                       />
-                    </div>
+                    </SplideSlide>
                   ))}
 
-              </Carousel></div>
+                </Splide></div>
               );
             }
             return (
               <>
-                <p>Don't know how to render a block!</p>
+
                 <pre>{JSON.stringify(record, null, 2)}</pre>
               </>
             );

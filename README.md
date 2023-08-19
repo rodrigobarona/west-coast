@@ -1,81 +1,38 @@
-# A multi-language blog example using Next.js and DatoCMS
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-This example showcases a Next.js multi-language blog using [DatoCMS](https://www.datocms.com/) as the data source. It fully supports [Preview Mode](https://www.datocms.com/docs/next-js/setting-up-next-js-preview-mode) with [DatoCMS real-time updates](https://www.datocms.com/docs/next-js/real-time-updates) as well as [DatoCMS SiteSearch](https://www.datocms.com/docs/site-search)  used to index and display the posts searched by the user.
+## Getting Started
 
-The purpose of this repo is to have a quick start reference that can be set up with the "one-click" button below. This is what the end result looks like:
-#### [https://next-js-i18n-blog-demo-with-sitesearch.vercel.app/](https://next-js-i18n-blog-demo-with-sitesearch.vercel.app/)
-
-## How to use
-
-### Quick start
-
-1. [Create an account on DatoCMS](https://datocms.com).
-
-2. Make sure that you have set up the [Github integration on Vercel](https://vercel.com/docs/git/vercel-for-github).
-
-3. Let DatoCMS set everything up for you clicking this button:
-
-  [![Deploy with DatoCMS](https://dashboard.datocms.com/deploy/button.svg)](https://dashboard.datocms.com/deploy?repo=datocms/next.js-i18n-blog-demo-site-search)
-
-### Local setup
-
-Once the setup of the project and repo is done, clone the repo locally.
-
-#### Set up environment variables
-
-In your DatoCMS' project, go to the **Settings** menu at the top and click **API tokens**.
-
-Then click **Read-only API token** and copy the token.
-
-Next, copy the `.env.example` file in this directory to `.env` (which will be ignored by Git):
+First, run the development server:
 
 ```bash
-cp .env.example .env
-```
-
-Then set each variable on `.env`:
-
-- `NEXT_EXAMPLE_CMS_DATOCMS_API_TOKEN` should be the API token you just copied.
-- `NEXT_EXAMPLE_CMS_DATOCMS_PREVIEW_SECRET` can be any random string (but avoid spaces), like `MY_SECRET` - this is used for the Preview Mode](https://www.datocms.com/docs/next-js/setting-up-next-js-preview-mode). This token will be used for the preview mode - read on to know more.
-- `NEXT_EXAMPLE_CMS_DATOCMS_API_TOKEN_SITE_SEARCH` should be the SiteSearch API token on your project
-- `NEXT_EXAMPLE_CMS_DATOCMS_BUILD_TRIGGER_ID` should be the numerical string on the URL of the Build trigger associated with the project
-
-Your `.env` file should look like this:
-
-```bash
-NEXT_EXAMPLE_CMS_DATOCMS_API_TOKEN=...
-NEXT_EXAMPLE_CMS_DATOCMS_PREVIEW_SECRET=...
-NEXT_EXAMPLE_CMS_DATOCMS_API_TOKEN_SITE_SEARCH=...
-NEXT_EXAMPLE_CMS_DATOCMS_BUILD_TRIGGER_ID=...
-```
-
-#### Run your project locally
-
-```bash
-npm install
 npm run dev
+# or
+yarn dev
+# or
+pnpm dev
 ```
 
-Your blog should be up and running on [http://localhost:3000](http://localhost:3000)!
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-#### Try preview mode
+You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
 
-On DatoCMS, go to one of the posts you've created and:
+[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
 
-- **Update the title**. For example, you can add `[Draft]` in front of the title.
-- Click **Save**, but **DO NOT** click **Publish**. By doing this, the post will be in the draft state.
+The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-(If it doesn't become draft, you need to go to the model settings for `Post`, go to **Additional Settings**, and turn on **Enable draft/published system**.)
+This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-Now, if you go to the post page on localhost, you won't see the updated title. However, if you use the **Preview Mode**, you'll be able to see the change ([Documentation](https://www.datocms.com/docs/next-js/setting-up-next-js-preview-mode)).
+## Learn More
 
-To enable the Preview Mode, go to this URL:
+To learn more about Next.js, take a look at the following resources:
 
-```
-http://localhost:3000/api/preview?secret=<secret>
-```
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-- `<secret>` should be the string you entered for `NEXT_EXAMPLE_CMS_DATOCMS_PREVIEW_SECRET`.
-- `<slug>` should be the post's `slug` attribute (you can check on DatoCMS).
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-You should now be able to see the updated title. To exit the preview mode, you can click **Click here to exit preview mode** at the top.
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.

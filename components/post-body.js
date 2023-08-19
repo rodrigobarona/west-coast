@@ -1,4 +1,5 @@
-import { StructuredText, Image } from "react-datocms";
+import { StructuredText } from "react-datocms";
+import Image from 'next/image'
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import styles from './post-body.module.css';
@@ -13,13 +14,28 @@ export default function PostBody({ content }) {
           data={content}
           renderBlock={({ record }) => {
             if (record.__typename === "ImageBlockRecord") {
-              return <Image data={record.image.responsiveImage} />;
+              return (
+                <div className="not-prose">
+                      <Image 
+                        src={record.image.url} 
+                        width={record.image.width} 
+                        height={record.image.height} 
+                        alt={record.image.alt} 
+                        quality={100}
+                        placeholder="blur"
+                        loading="lazy"
+                        blurDataURL={record.image.blurUpThumb} 
+                        />
+                        </div>
+                        );
             }
             if (record.__typename === "VideoBlockRecord") {
               return (
+               
                 <video controls poster={record.video.video.thumbnailUrl}>
                   <source src={record.video.video.mp4Url} type="video/mp4" />
                 </video>
+               
               );
             }
             if (record.__typename === "GalleryBlockRecord") {
@@ -43,7 +59,7 @@ export default function PostBody({ content }) {
               };
 
               return (
-                <div className={`${styles.removeProse}`}>
+                <div className="not-prose">
                   <Splide 
                   options={{
                     perPage: 1,
@@ -60,10 +76,16 @@ export default function PostBody({ content }) {
                  
                   {record.gallery.map(( slide, index ) => (
                     <SplideSlide key={ index }>
-                      <img
-                        src={slide.url}
-                        alt={slide.alt}
-                      />
+                      <Image 
+                        src={slide.url} 
+                        width={1000} 
+                        height={1000} 
+                        alt={slide.alt} 
+                        quality={100}
+                        placeholder="blur"
+                        loading="lazy"
+                        blurDataURL={slide.blurUpThumb} 
+                        />
                     </SplideSlide>
                   ))}
 

@@ -50,9 +50,11 @@ export async function getStaticProps({ params, preview = false, locale }) {
               ...on ImageBlockRecord {
                 id
                 image {
-                  responsiveImage(imgixParams: {auto: format, fit: clamp, w: 800, crop: focalpoint}) {
-                    ...responsiveImageFragment
-                  }
+                  url (imgixParams: {auto: format, fit: clamp, w: 800, crop: focalpoint}) 
+                  width
+                  height
+                  alt
+                  blurUpThumb
                 }
               }
               ...on VideoBlockRecord {
@@ -69,7 +71,10 @@ export async function getStaticProps({ params, preview = false, locale }) {
               ... on GalleryBlockRecord {
                 id
                 gallery {
+                  width
+                  height
                   alt
+                  blurUpThumb
                   url(imgixParams: {auto: format, fit: crop, w: 1000, h: 1000, crop: focalpoint})
                 }
               }

@@ -1,0 +1,7 @@
+.removeProse ul > li {
+    padding-left: 0; 
+}
+
+.removeProse ul > li::before {
+    content: none;
+}

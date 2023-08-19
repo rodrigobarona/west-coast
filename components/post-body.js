@@ -1,11 +1,21 @@
-import React from "react";
 import { StructuredText, Image } from "react-datocms";
-import { Splide, SplideSlide } from "@splidejs/react-splide";
-import styles from './post-body.module.scss';
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
+import styles from './post-body.module.css';
+import { Splide, SplideSlide } from '@splidejs/react-splide';
+import '@splidejs/react-splide/css';
 
 export default function PostBody({ content }) {
   return (
     <div className="max-w-2xl mx-auto">
+      <Splide aria-label="My Favorite Images">
+        <SplideSlide>
+          <img src="https://placehold.co/600x400" alt="Image 1" />
+        </SplideSlide>
+        <SplideSlide>
+          <img src="https://placehold.co/600x400" alt="Image 2" />
+        </SplideSlide>
+      </Splide>
       <div className="prose prose-lg prose-blue">
         <StructuredText
           data={content}
@@ -21,9 +31,28 @@ export default function PostBody({ content }) {
               );
             }
             if (record.__typename === "GalleryBlockRecord") {
+
+              const responsive = {
+                desktop: {
+                  breakpoint: { max: 3000, min: 1024 },
+                  items: 1,
+                  slidesToSlide: 1 // optional, default to 1.
+                },
+                tablet: {
+                  breakpoint: { max: 1024, min: 464 },
+                  items: 1,
+                  slidesToSlide: 1 // optional, default to 1.
+                },
+                mobile: {
+                  breakpoint: { max: 464, min: 0 },
+                  items: 1,
+                  slidesToSlide: 1 // optional, default to 1.
+                }
+              };
+
               return (
-                <div className={`${styles.removeprose}`}>
-                <Splide 
+                <div className={`${styles.removeProse}`}>
+                  <Splide 
                   options={{
                     perPage: 1,
                     height: "fit-content",
@@ -51,7 +80,7 @@ export default function PostBody({ content }) {
             }
             return (
               <>
-                <p>Don't know how to render a block!</p>
+
                 <pre>{JSON.stringify(record, null, 2)}</pre>
               </>
             );

@@ -66,7 +66,7 @@ export default function PostBody({ content }) {
                     padding: 0,
                     paginationKeyboard: true,
                     drag: true,
-                    lazyLoad: nearby,
+                    lazyLoad: "nearby",
                     preloadPages: "3",
                   }}
                   

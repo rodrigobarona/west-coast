@@ -65,7 +65,9 @@ export default function PostBody({ content }) {
                     gap: "1px",
                     padding: 0,
                     paginationKeyboard: true,
-                    drag: true
+                    drag: true,
+                    lazyLoad: nearby,
+                    preloadPages: "3",
                   }}
                   
                   onMoved={(splide, newIndex) => {}}
@@ -74,14 +76,12 @@ export default function PostBody({ content }) {
                   {record.gallery.map(( slide, index ) => (
                     <SplideSlide key={ index }>
                       <Image 
-                        src={slide.url} 
+                        data-splide-lazy={slide.url} 
                         width={1000} 
                         height={1000} 
                         alt={slide.alt} 
                         quality={100}
-                        placeholder="blur"
-                        loading="lazy"
-                        blurDataURL={slide.blurUpThumb} 
+                        src={slide.blurUpThumb} 
                         />
                     </SplideSlide>
                   ))}

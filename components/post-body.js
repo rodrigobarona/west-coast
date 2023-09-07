@@ -30,7 +30,7 @@ export default function PostBody({ content }) {
             if (record.__typename === "VideoBlockRecord") {
               return (
                
-                <video controls poster={record.video.video.thumbnailUrl} className="lg:min-w-2xl">
+                <video controls poster={record.video.video.thumbnailUrl}  width={record.video.width} height={record.video.height}>
                   <source src={record.video.video.mp4Url} type="video/mp4" />
                 </video>
                

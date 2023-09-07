@@ -65,6 +65,8 @@ export async function getStaticProps({ params, preview = false, locale }) {
                     thumbnailUrl (format: gif)
                     mp4Url(res: high)
                   }
+                  height
+                  width
                   mimeType
                 }
               }

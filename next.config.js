@@ -19,6 +19,24 @@ const nextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: '/posts/ride',
+        destination: '/posts/enjoying-the-ride',
+        permanent: true,
+      },
+      {
+        source: '/es/posts/ride',
+        destination: '/es/posts/enjoying-the-ride',
+        permanent: true,
+      },
+      {
+        source: '/en/posts/ride',
+        destination: '/en/posts/enjoying-the-ride',
+        permanent: true,
+      },
+    ]
 }
 
 module.exports = nextConfig

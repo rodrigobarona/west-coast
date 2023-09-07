@@ -21,7 +21,7 @@ export default function PostBody({ content }) {
                         quality={100}
                         placeholder="blur"
                         loading="lazy"
-                        className="lg:min-w-[672px]"
+                        className="lg:min-w-2xl"
                         blurDataURL={record.image.blurUpThumb} 
                         />
                         </div>
@@ -61,7 +61,6 @@ export default function PostBody({ content }) {
                   <Splide 
                   options={{
                     perPage: 1,
-                    height: "fit-content",
                     rewind: true,
                     gap: "1px",
                     padding: 0,

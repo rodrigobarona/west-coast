@@ -9,8 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@datocms/cma-client": "^2.0.0",
-    "@datocms/cma-client-node": "^2.0.0",
+    "@datocms/cma-client": "^2.2.0",
+    "@datocms/cma-client-node": "^2.2.0",
     "@splidejs/react-splide": "^0.7.12",
     "@types/node": "20.5.1",
     "@types/react": "18.2.20",
@@ -30,6 +30,6 @@
     "typescript": "5.1.6"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.9"
+    "@tailwindcss/typography": "^0.5.10"
   }
 }

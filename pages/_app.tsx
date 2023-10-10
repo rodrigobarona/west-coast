@@ -10,7 +10,7 @@ export default function App({ Component, pageProps }: AppProps) {
       domain={process.env.NEXT_PUBLIC_AUTH0_DOMAIN}
     >
       <Component {...pageProps} />
-      <Analytics />
+      
     </Auth0Provider>
   )
 }

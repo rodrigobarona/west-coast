@@ -3,7 +3,7 @@ import React, { useState } from "react"
 import useSWR from "swr"
 import { useAuth0 } from "@auth0/auth0-react"
 
-const fetcher = (url: any) => fetch(url).then((res) => res.json())
+const fetcher = (url: string) => fetch(url).then((res) => res.json())
 
 export default function useComments() {
   const { getAccessTokenSilently } = useAuth0()

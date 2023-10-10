@@ -1,4 +1,4 @@
-import { useAuth0 } from '@auth0/auth0-react'
+import { useAuth0 } from "@auth0/auth0-react"
 
 type CommentFormProps = {
   text: string
@@ -21,7 +21,7 @@ export default function CommentForm({
         placeholder={
           isAuthenticated
             ? `What are your thoughts?`
-            : 'Please login to leave a comment'
+            : "Please login to leave a comment"
         }
         onChange={(e) => setText(e.target.value)}
         value={text}
@@ -36,7 +36,9 @@ export default function CommentForm({
             </button>
             <button
               className="text-gray-500"
-              onClick={() => logout({ returnTo: window.location.origin })}
+              onClick={() =>
+                logout({ logoutParams: { returnTo: window.location.origin } })
+              }
             >
               Log Out
             </button>

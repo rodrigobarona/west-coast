@@ -1,16 +1,16 @@
-import type { Comment } from '../interfaces'
-import React, { useState } from 'react'
-import useSWR from 'swr'
-import { useAuth0 } from '@auth0/auth0-react'
+import type { Comment } from "../interfaces"
+import React, { useState } from "react"
+import useSWR from "swr"
+import { useAuth0 } from "@auth0/auth0-react"
 
-const fetcher = (url) => fetch(url).then((res) => res.json())
+const fetcher = (url: any) => fetch(url).then((res) => res.json())
 
 export default function useComments() {
   const { getAccessTokenSilently } = useAuth0()
-  const [text, setText] = useState('')
+  const [text, setText] = useState("")
 
   const { data: comments, mutate } = useSWR<Comment[]>(
-    '/api/comment',
+    "/api/comment",
     fetcher,
     { fallbackData: [] }
   )
@@ -20,15 +20,15 @@ export default function useComments() {
     const token = await getAccessTokenSilently()
 
     try {
-      await fetch('/api/comment', {
-        method: 'POST',
+      await fetch("/api/comment", {
+        method: "POST",
         body: JSON.stringify({ text }),
         headers: {
           Authorization: token,
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
       })
-      setText('')
+      setText("")
       await mutate()
     } catch (err) {
       console.log(err)
@@ -39,12 +39,12 @@ export default function useComments() {
     const token = await getAccessTokenSilently()
 
     try {
-      await fetch('/api/comment', {
-        method: 'DELETE',
+      await fetch("/api/comment", {
+        method: "DELETE",
         body: JSON.stringify({ comment }),
         headers: {
           Authorization: token,
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
       })
       await mutate()

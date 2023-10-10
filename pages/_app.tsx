@@ -1,6 +1,5 @@
 import "@/styles/globals.css"
 import type { AppProps } from "next/app"
-import type { Comment } from '../interfaces'
 import { Analytics } from "@vercel/analytics/react"
 import { Auth0Provider } from "@auth0/auth0-react"
 

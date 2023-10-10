@@ -1,34 +1,35 @@
-import { format } from "date-fns";
-import Head from "next/head";
-import { renderMetaTags, useQuerySubscription } from "react-datocms";
-import Container from "../../components/container";
-import Header from "../../components/header";
-import Layout from "../../components/layout";
-import MoreStories from "../../components/more-stories";
-import PostBody from "../../components/post-body";
-import PostHeader from "../../components/post-header";
-import SectionSeparator from "../../components/section-separator";
-import { request } from "../../lib/datocms";
-import { metaTagsFragment, responsiveImageFragment } from "../../lib/fragments";
-import LanguageBar from "../../components/language-bar";
+import { format } from "date-fns"
+import Head from "next/head"
+import { renderMetaTags, useQuerySubscription } from "react-datocms"
+import Container from "../../components/container"
+import Comment from "../../components/comment"
+import Header from "../../components/header"
+import Layout from "../../components/layout"
+import MoreStories from "../../components/more-stories"
+import PostBody from "../../components/post-body"
+import PostHeader from "../../components/post-header"
+import SectionSeparator from "../../components/section-separator"
+import { request } from "../../lib/datocms"
+import { metaTagsFragment, responsiveImageFragment } from "../../lib/fragments"
+import LanguageBar from "../../components/language-bar"
 
 export async function getStaticPaths({ locales }) {
-  const data = await request({ query: `{ allPosts { slug } }` });
-  const pathsArray = [];
+  const data = await request({ query: `{ allPosts { slug } }` })
+  const pathsArray = []
   data.allPosts.map((post) => {
     locales.map((language) => {
-      pathsArray.push({ params: { slug: post.slug }, locale: language });
-    });
-  });
+      pathsArray.push({ params: { slug: post.slug }, locale: language })
+    })
+  })
 
   return {
     paths: pathsArray,
     fallback: false,
-  };
+  }
 }
 
 export async function getStaticProps({ params, preview = false, locale }) {
-  const formattedLocale = locale.split("-")[0];
+  const formattedLocale = locale.split("-")[0]
   const graphqlRequest = {
     query: `
       query PostBySlug($slug: String) {
@@ -125,7 +126,7 @@ export async function getStaticProps({ params, preview = false, locale }) {
     variables: {
       slug: params.slug,
     },
-  };
+  }
 
   return {
     props: {
@@ -141,15 +142,15 @@ export async function getStaticProps({ params, preview = false, locale }) {
           },
       preview,
     },
-  };
+  }
 }
 
 export default function Post({ subscription, preview }) {
   const {
     data: { site, post, morePosts },
-  } = useQuerySubscription(subscription);
+  } = useQuerySubscription(subscription)
 
-  const metaTags = post.seo.concat(site.favicon);
+  const metaTags = post.seo.concat(site.favicon)
 
   return (
     <Layout preview={preview}>
@@ -166,9 +167,12 @@ export default function Post({ subscription, preview }) {
           />
           <PostBody content={post.content} />
         </article>
+
+        <Comment />
+
         <SectionSeparator />
         {morePosts.length > 0 && <MoreStories posts={morePosts} />}
       </Container>
     </Layout>
-  );
+  )
 }

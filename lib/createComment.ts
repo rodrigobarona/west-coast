@@ -9,11 +9,9 @@ export default async function createComments(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  const url = clearUrl(req.headers["referer"])
+  const url = clearUrl(req.headers.referer)
   const { text } = req.body
   const { authorization } = req.headers
-
-  console.log(req.headers["referer"])
 
   if (!text || !authorization) {
     return res.status(400).json({ message: "Missing parameter." })

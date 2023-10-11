@@ -13,6 +13,8 @@ export default async function createComments(
   const { text } = req.body
   const { authorization } = req.headers
 
+  console.log(req.headers["referer"])
+
   if (!text || !authorization) {
     return res.status(400).json({ message: "Missing parameter." })
   }

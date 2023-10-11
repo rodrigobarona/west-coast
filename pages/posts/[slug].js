@@ -166,8 +166,6 @@ export default function Post({ subscription, preview }) {
             author={post.author}
           />
           <PostBody content={post.content} />
-
-          <Comment />
         </article>
 
         <SectionSeparator />

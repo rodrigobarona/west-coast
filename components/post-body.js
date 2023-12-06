@@ -41,7 +41,7 @@ export default function PostBody({ content }) {
             }
             if (record.__typename === "AudioBlockRecord") {
               return (
-                <audio controls>
+                <audio controls className="w-full">
                   <source src={record.audio.url} type={record.audio.mimeType} />
                   Your browser does not support the audio element.
                 </audio>

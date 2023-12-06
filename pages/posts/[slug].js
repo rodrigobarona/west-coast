@@ -54,6 +54,7 @@ export async function getStaticProps({ params, preview = false, locale }) {
                   url (imgixParams: {auto: format, fit: clamp, w: 800, crop: focalpoint}) 
                   width
                   height
+                  basename
                   alt
                   blurUpThumb
                 }
@@ -95,6 +96,7 @@ export async function getStaticProps({ params, preview = false, locale }) {
                 gallery {
                   width
                   height
+                  basename
                   alt
                   blurUpThumb
                   url(imgixParams: {auto: format, fit: crop, w: 1000, h: 1000, crop: focalpoint})

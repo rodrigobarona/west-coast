@@ -18,8 +18,8 @@ export default function PostBody({ content }) {
                     src={record.image.url}
                     width={record.image.width}
                     height={record.image.height}
-                    alt={record.image.alt}
-                    quality={100}
+                    alt={record.image.alt || record.image.basename}
+                    quality={75}
                     placeholder="blur"
                     loading="lazy"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -94,8 +94,8 @@ export default function PostBody({ content }) {
                           data-splide-lazy={slide.url}
                           width={1000}
                           height={1000}
-                          alt={slide.alt}
-                          quality={100}
+                          alt={slide.alt || slide.basename}
+                          quality={75}
                           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                           src={slide.blurUpThumb}
                         />

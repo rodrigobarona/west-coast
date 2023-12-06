@@ -33,6 +33,9 @@ export default function PostBody({ content }) {
                 <MuxPlayer
                   streamType="on-demand"
                   playbackId={record.video.video.muxPlaybackId}
+                  style={{
+                    aspectRatio: `${record.video.width} / ${record.video.height}`,
+                  }}
                   metadata={{
                     video_id: record.video.video.muxAssetId,
                     video_title: record.video.basename,

@@ -62,7 +62,17 @@ export async function getStaticProps({ params, preview = false, locale }) {
                 id
                 video {
                   url
+                  title
+                  basename
+                  thumbhash
+                  height
+                  width
                   video {
+                    framerate
+                    duration
+                    muxPlaybackId
+                    muxAssetId
+                    streamingUrl
                     thumbnailUrl
                     mp4Url(res: high)
                   }

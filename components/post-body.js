@@ -1,4 +1,5 @@
 import { StructuredText } from "react-datocms"
+import MuxPlayer from "@mux/mux-player-react"
 import Image from "next/image"
 import { Splide, SplideSlide } from "@splidejs/react-splide"
 import "@splidejs/react-splide/css"
@@ -29,14 +30,15 @@ export default function PostBody({ content }) {
             }
             if (record.__typename === "VideoBlockRecord") {
               return (
-                <video
-                  controls
-                  poster={record.video.video.thumbnailUrl}
-                  width={record.video.width}
-                  height={record.video.height}
-                >
-                  <source src={record.video.video.mp4Url} type="video/mp4" />
-                </video>
+                <MuxPlayer
+                  streamType="on-demand"
+                  playbackId={record.video.video.muxPlaybackId}
+                  metadata={{
+                    video_id: record.video.video.muxAssetId,
+                    video_title: record.video.basename,
+                    viewer_user_id: record.video.thumbhash,
+                  }}
+                />
               )
             }
             if (record.__typename === "AudioBlockRecord") {

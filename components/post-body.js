@@ -22,6 +22,7 @@ export default function PostBody({ content }) {
                     quality={100}
                     placeholder="blur"
                     loading="lazy"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     className="lg:min-w-2xl"
                     blurDataURL={record.image.blurUpThumb}
                   />
@@ -95,6 +96,7 @@ export default function PostBody({ content }) {
                           height={1000}
                           alt={slide.alt}
                           quality={100}
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                           src={slide.blurUpThumb}
                         />
                       </SplideSlide>

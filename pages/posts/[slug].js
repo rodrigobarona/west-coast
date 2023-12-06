@@ -71,6 +71,13 @@ export async function getStaticProps({ params, preview = false, locale }) {
                   mimeType
                 }
               }
+              ... on AudioBlockRecord {
+                id
+                audio {
+                  url
+                  mimeType
+                }
+              }
               ... on GalleryBlockRecord {
                 id
                 gallery {

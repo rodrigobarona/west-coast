@@ -84,7 +84,7 @@ export default function PostBody({ content }) {
                       paginationKeyboard: true,
                       drag: true,
                       lazyLoad: "nearby",
-                      preloadPages: "3",
+                      preloadPages: "1",
                     }}
                     onMoved={(splide, newIndex) => {}}
                   >

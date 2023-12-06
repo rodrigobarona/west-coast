@@ -67,6 +67,8 @@ export async function getStaticProps({ params, preview = false, locale }) {
                   thumbhash
                   height
                   width
+                  blurUpThumb
+                  blurhash
                   video {
                     framerate
                     duration

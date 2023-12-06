@@ -1,5 +1,5 @@
 import { StructuredText } from "react-datocms"
-import MuxPlayer from "@mux/mux-player-react"
+import MuxPlayer from "@mux/mux-player-react/lazy"
 import Image from "next/image"
 import { Splide, SplideSlide } from "@splidejs/react-splide"
 import "@splidejs/react-splide/css"
@@ -36,7 +36,7 @@ export default function PostBody({ content }) {
                   playbackId={record.video.video.muxPlaybackId}
                   placeholder={record.video.blurUpThumb}
                   style={{
-                    aspectRatio: `${record.video.width} / ${record.video.height}`,
+                    aspectRatio: ` ${record.video.width}/${record.video.height}`,
                   }}
                   metadata={{
                     video_id: record.video.video.muxAssetId,

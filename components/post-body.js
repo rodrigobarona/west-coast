@@ -40,7 +40,7 @@ export default function PostBody({ content }) {
                   metadata={{
                     video_id: record.video.video.muxAssetId,
                     video_title: record.video.title || record.video.basename,
-                    viewer_user_id: record.video.thumbhash,
+                    viewer_user_id: record.video.id,
                   }}
                 />
               )

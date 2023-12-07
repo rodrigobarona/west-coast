@@ -9,7 +9,7 @@ export default function CoverImage({
   height,
   alt,
   slug,
-  priority,
+  blurUpThumb,
 }) {
   const image = (
     <Image
@@ -18,7 +18,9 @@ export default function CoverImage({
       height={height}
       alt={alt}
       quality={80}
-      priority={priority}
+      placeholder="blur"
+      loading="lazy"
+      blurDataURL={blurUpThumb}
       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 50vw"
       className={cn("shadow-small", {
         "hover:shadow-medium transition-shadow duration-200": slug,

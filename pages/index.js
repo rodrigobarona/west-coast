@@ -36,6 +36,7 @@ export async function getStaticProps({ preview, locale }) {
             height
             basename
             alt
+            blurUpThumb
           }
           author {
             name

@@ -113,6 +113,7 @@ export async function getStaticProps({ params, preview = false, locale }) {
             height
             basename
             alt
+            blurUpThumb
             url(imgixParams: {auto: format, fit: crop, w: 2000, h: 1000, crop: focalpoint })
           }
           author {
@@ -133,6 +134,7 @@ export async function getStaticProps({ params, preview = false, locale }) {
             height
             basename
             alt
+            blurUpThumb
             url(imgixParams: {auto: format, fit: crop, w: 2000, h: 1000, crop: focalpoint})
           }
           author {

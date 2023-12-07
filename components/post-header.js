@@ -16,7 +16,7 @@ export default function PostHeader({ title, coverImage, date, author }) {
           width={coverImage.width}
           height={coverImage.height}
           alt={coverImage.alt || coverImage.basename}
-          priority="true"
+          blurUpThumb={coverImage.blurUpThumb}
         />
       </div>
       <div className="max-w-2xl mx-auto">

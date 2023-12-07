@@ -22,9 +22,9 @@ export default function PostBody({ content }) {
                     quality={75}
                     placeholder="blur"
                     loading="lazy"
+                    blurDataURL={record.image.blurUpThumb}
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     className="lg:min-w-2xl"
-                    blurDataURL={record.image.blurUpThumb}
                   />
                 </div>
               )

@@ -4,8 +4,9 @@ const { buildClient } = await import("@datocms/cma-client")
 const { Link } = await import("next/link")
 // Dynamic import for "next/router"
 const { useRouter } = await import("next/router")
-// Dynamic import for "react"
-const { useEffect } = await import("react")
+
+import { useEffect } from "react"
+
 // Dynamic import for "react-datocms"
 const { useSiteSearch } = await import("react-datocms")
 // Dynamic import for "../../components/container"

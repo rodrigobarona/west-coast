@@ -92,13 +92,15 @@ export default function PostBody({ content }) {
                     {record.gallery.map((slide, index) => (
                       <SplideSlide key={index}>
                         <Image
-                          data-splide-lazy={slide.url}
+                          src={slide.url}
                           width={700}
                           height={700}
                           alt={slide.alt || slide.basename}
                           quality={75}
                           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                          src={slide.blurUpThumb}
+                          blurDataURL={slide.blurUpThumb}
+                          placeholder="blur"
+                          loading="lazy"
                         />
                       </SplideSlide>
                     ))}

@@ -101,6 +101,7 @@ export default function PostBody({ content }) {
                       <SplideSlide key={index}>
                         <Image
                           src={slide.url}
+                          data-splide-lazy-srcset={slide.url}
                           width={700}
                           height={700}
                           alt={

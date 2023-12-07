@@ -19,8 +19,8 @@ export default function CoverImage({
       height={height}
       alt={alt}
       quality={80}
-      placeholder={priority ? undefined : "blur"}
-      loading={priority ? undefined : "lazy"}
+      placeholder={priority ? "empty" : "blur"}
+      loading={priority ? "eager" : "lazy"}
       blurDataURL={priority ? undefined : blurUpThumb}
       {...(priority ? { priority } : {})}
       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 50vw"

@@ -1,6 +1,7 @@
 // Dynamic import for "next/router"
 const { useRouter } = await import("next/router")
-import { useEffect, useRef } from "react"
+// Dynamic import for "react"
+const { useEffect, useRef } = await import("react")
 
 export default function Search() {
   const searchedValue = useRef("")

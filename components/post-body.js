@@ -109,9 +109,9 @@ export default function PostBody({ content }) {
                           }
                           quality={75}
                           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                          blurDataURL={slide.blurUpThumb}
                           placeholder="blur"
                           loading="lazy"
+                          blurDataURL={slide.blurUpThumb}
                         />
                       </SplideSlide>
                     ))}

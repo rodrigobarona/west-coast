@@ -1,18 +1,17 @@
-import Head from "next/head";
-import { renderMetaTags, useQuerySubscription } from "react-datocms";
-import Container from "../components/container";
-import HeroPost from "../components/hero-post";
-import Intro from "../components/intro";
-import Layout from "../components/layout";
-import MoreStories from "../components/more-stories";
-import { request } from "../lib/datocms";
-import { metaTagsFragment, responsiveImageFragment } from "../lib/fragments";
-import { useRouter } from "next/router";
-import LanguageBar from "../components/language-bar";
+import Head from "next/head"
+import { renderMetaTags, useQuerySubscription } from "react-datocms"
+import Container from "../components/container"
+import HeroPost from "../components/hero-post"
+import Intro from "../components/intro"
+import Layout from "../components/layout"
+import MoreStories from "../components/more-stories"
+import { request } from "../lib/datocms"
+import { metaTagsFragment } from "../lib/fragments"
+import { useRouter } from "next/router"
+import LanguageBar from "../components/language-bar"
 
-
-export async function getStaticProps({preview, locale}) {
-  const formattedLocale = locale.split("-")[0];
+export async function getStaticProps({ preview, locale }) {
+  const formattedLocale = locale.split("-")[0]
   const graphqlRequest = {
     query: `
       {
@@ -32,9 +31,11 @@ export async function getStaticProps({preview, locale}) {
           excerpt
           date
           coverImage {
-            responsiveImage(imgixParams: {auto: format, fit: crop, w: 2000, h: 1000 }) {
-              ...responsiveImageFragment
-            }
+            url(imgixParams: {auto: format, fit: crop, w: 2000, h: 1000, crop: focalpoint })
+            width
+            height
+            basename
+            alt
           }
           author {
             name
@@ -46,10 +47,9 @@ export async function getStaticProps({preview, locale}) {
       }
 
       ${metaTagsFragment}
-      ${responsiveImageFragment}
     `,
     preview,
-  };
+  }
 
   return {
     props: {
@@ -65,19 +65,19 @@ export async function getStaticProps({preview, locale}) {
             initialData: await request(graphqlRequest),
           },
     },
-  };
+  }
 }
 
 export default function Index({ subscription }) {
   const {
     data: { allPosts, site, blog },
-  } = useQuerySubscription(subscription);
+  } = useQuerySubscription(subscription)
 
-  const { locale, locales, asPath } = useRouter().locale;
+  const { locale, locales, asPath } = useRouter().locale
 
-  const heroPost = allPosts[0];
-  const morePosts = allPosts.slice(1);
-  const metaTags = blog.seo.concat(site.favicon);
+  const heroPost = allPosts[0]
+  const morePosts = allPosts.slice(1)
+  const metaTags = blog.seo.concat(site.favicon)
 
   return (
     <>
@@ -100,5 +100,5 @@ export default function Index({ subscription }) {
         </Container>
       </Layout>
     </>
-  );
+  )
 }

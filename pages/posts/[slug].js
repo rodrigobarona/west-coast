@@ -10,7 +10,7 @@ import PostBody from "../../components/post-body"
 import PostHeader from "../../components/post-header"
 import SectionSeparator from "../../components/section-separator"
 import { request } from "../../lib/datocms"
-import { metaTagsFragment, responsiveImageFragment } from "../../lib/fragments"
+import { metaTagsFragment } from "../../lib/fragments"
 import LanguageBar from "../../components/language-bar"
 
 export async function getStaticPaths({ locales }) {
@@ -109,9 +109,11 @@ export async function getStaticProps({ params, preview = false, locale }) {
             url(imgixParams: {auto: format, fit: crop, w: 2000, h: 1000 })
           }
           coverImage {
-            responsiveImage(imgixParams: {auto: format, fit: crop, w: 2000, h: 1000, crop: focalpoint }) {
-              ...responsiveImageFragment
-            }
+            width
+            height
+            basename
+            alt
+            url(imgixParams: {auto: format, fit: crop, w: 2000, h: 1000, crop: focalpoint })
           }
           author {
             name
@@ -127,9 +129,11 @@ export async function getStaticProps({ params, preview = false, locale }) {
           excerpt
           date
           coverImage {
-            responsiveImage(imgixParams: {auto: format, fit: crop, w: 2000, h: 1000, crop: focalpoint}) {
-              ...responsiveImageFragment
-            }
+            width
+            height
+            basename
+            alt
+            url(imgixParams: {auto: format, fit: crop, w: 2000, h: 1000, crop: focalpoint})
           }
           author {
             name
@@ -140,7 +144,6 @@ export async function getStaticProps({ params, preview = false, locale }) {
         }
       }
 
-      ${responsiveImageFragment}
       ${metaTagsFragment}
     `,
     preview,

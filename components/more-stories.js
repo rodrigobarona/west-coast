@@ -1,9 +1,9 @@
-import PostPreview from "../components/post-preview";
-import { useRouter } from "next/router";
-import i18n from "../lib/i18n";
+import PostPreview from "../components/post-preview"
+import { useRouter } from "next/router"
+import i18n from "../lib/i18n"
 
 export default function MoreStories({ posts }) {
-  const { locale } = useRouter();
+  const { locale } = useRouter()
   return (
     <section>
       <h2 className="mb-8 text-6xl md:text-7xl font-bold tracking-tighter leading-tight">
@@ -23,5 +23,5 @@ export default function MoreStories({ posts }) {
         ))}
       </div>
     </section>
-  );
+  )
 }

@@ -90,7 +90,8 @@ export default function PostBody({ content }) {
                       padding: 0,
                       paginationKeyboard: true,
                       drag: true,
-                      lazyLoad: "sequential",
+                      lazyLoad: "nearby",
+                      preloadPages: "2",
                       width: "700px",
                       heightRatio: 1,
                     }}

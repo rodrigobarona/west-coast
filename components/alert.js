@@ -1,10 +1,14 @@
-import Container from "./container";
-import cn from "classnames";
-import i18n from "../lib/i18n";
-import { useRouter } from "next/router";
+// Dynamic import for "./container"
+const { default: Container } = await import("./container")
+// Dynamic import for "classnames"
+const cn = await import("classnames")
+// Dynamic import for "../lib/i18n"
+const { default: i18n } = await import("../lib/i18n")
+// Dynamic import for "next/router"
+const { useRouter } = await import("next/router")
 
 export default function Alert({ preview }) {
-  const { locale } = useRouter();
+  const { locale } = useRouter()
 
   return (
     <div
@@ -41,5 +45,5 @@ export default function Alert({ preview }) {
         </div>
       </Container>
     </div>
-  );
+  )
 }

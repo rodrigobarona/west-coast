@@ -1,9 +1,12 @@
-import Container from "./container";
-import { useRouter } from "next/router";
-import i18n from "../lib/i18n";
+// Dynamic import for "./container"
+const { default: Container } = await import("./container")
+// Dynamic import for "next/router"
+const { useRouter } = await import("next/router")
+// Dynamic import for "../lib/i18n"
+const { default: i18n } = await import("../lib/i18n")
 
 export default function Footer() {
-  const { locale } = useRouter();
+  const { locale } = useRouter()
   return (
     <footer className="bg-accent-1 border-t border-accent-2">
       <Container>
@@ -28,5 +31,5 @@ export default function Footer() {
         </div>
       </Container>
     </footer>
-  );
+  )
 }

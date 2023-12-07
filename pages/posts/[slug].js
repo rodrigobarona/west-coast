@@ -1,17 +1,33 @@
-import { format } from "date-fns"
-import Head from "next/head"
-import { renderMetaTags, useQuerySubscription } from "react-datocms"
-import Container from "../../components/container"
-import Comment from "../../components/comment"
-import Header from "../../components/header"
-import Layout from "../../components/layout"
-import MoreStories from "../../components/more-stories"
-import PostBody from "../../components/post-body"
-import PostHeader from "../../components/post-header"
-import SectionSeparator from "../../components/section-separator"
-import { request } from "../../lib/datocms"
-import { metaTagsFragment } from "../../lib/fragments"
-import LanguageBar from "../../components/language-bar"
+// Dynamic import for "date-fns"
+const { format } = await import("date-fns")
+// Dynamic import for "next/head"
+const { default: Head } = await import("next/head")
+// Dynamic import for "react-datocms"
+const { renderMetaTags, useQuerySubscription } = await import("react-datocms")
+// Dynamic import for "../../components/container"
+const { default: Container } = await import("../../components/container")
+// Dynamic import for "../../components/comment"
+const { default: Comment } = await import("../../components/comment")
+// Dynamic import for "../../components/header"
+const { default: Header } = await import("../../components/header")
+// Dynamic import for "../../components/layout"
+const { default: Layout } = await import("../../components/layout")
+// Dynamic import for "../../components/more-stories"
+const { default: MoreStories } = await import("../../components/more-stories")
+// Dynamic import for "../../components/post-body"
+const { default: PostBody } = await import("../../components/post-body")
+// Dynamic import for "../../components/post-header"
+const { default: PostHeader } = await import("../../components/post-header")
+// Dynamic import for "../../components/section-separator"
+const { default: SectionSeparator } = await import(
+  "../../components/section-separator"
+)
+// Dynamic import for "../../lib/datocms"
+const { request } = await import("../../lib/datocms")
+// Dynamic import for "../../lib/fragments"
+const { metaTagsFragment } = await import("../../lib/fragments")
+// Dynamic import for "../../components/language-bar"
+const { default: LanguageBar } = await import("../../components/language-bar")
 
 export async function getStaticPaths({ locales }) {
   const data = await request({ query: `{ allPosts { slug } }` })

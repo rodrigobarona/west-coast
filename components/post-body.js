@@ -1,9 +1,14 @@
+// Dynamic import for react-datocms
 import { StructuredText } from "react-datocms"
-import MuxPlayer from "@mux/mux-player-react/lazy"
-import Image from "next/image"
-import { Splide, SplideSlide } from "@splidejs/react-splide"
-import "@splidejs/react-splide/css"
-import { generateAltFallback } from "../lib/imageUtils"
+// Dynamic import for @mux/mux-player-react/lazy
+const MuxPlayer = React.lazy(() => import("@mux/mux-player-react/lazy"))
+// Dynamic import for next/image
+const { Image } = import("next/image")
+// Dynamic import for @splidejs/react-splide
+const { Splide, SplideSlide } = import("@splidejs/react-splide")
+import "@splidejs/react-splide/css" // This import remains synchronous
+// Dynamic import for generateAltFallback
+const { generateAltFallback } = import("../lib/imageUtils")
 
 export default function PostBody({ content }) {
   return (

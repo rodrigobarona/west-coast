@@ -1,14 +1,25 @@
-import Head from "next/head"
-import { renderMetaTags, useQuerySubscription } from "react-datocms"
-import Container from "../components/container"
-import HeroPost from "../components/hero-post"
-import Intro from "../components/intro"
-import Layout from "../components/layout"
-import MoreStories from "../components/more-stories"
-import { request } from "../lib/datocms"
-import { metaTagsFragment } from "../lib/fragments"
-import { useRouter } from "next/router"
-import LanguageBar from "../components/language-bar"
+// Dynamic import for "next/head"
+const { default: Head } = await import("next/head")
+// Dynamic import for "react-datocms"
+const { renderMetaTags, useQuerySubscription } = await import("react-datocms")
+// Dynamic import for "../components/container"
+const { default: Container } = await import("../components/container")
+// Dynamic import for "../components/hero-post"
+const { default: HeroPost } = await import("../components/hero-post")
+// Dynamic import for "../components/intro"
+const { default: Intro } = await import("../components/intro")
+// Dynamic import for "../components/layout"
+const { default: Layout } = await import("../components/layout")
+// Dynamic import for "../components/more-stories"
+const { default: MoreStories } = await import("../components/more-stories")
+// Dynamic import for "../lib/datocms"
+const { request } = await import("../lib/datocms")
+// Dynamic import for "../lib/fragments"
+const { metaTagsFragment } = await import("../lib/fragments")
+// Dynamic import for "next/router"
+const { useRouter } = await import("next/router")
+// Dynamic import for "../components/language-bar"
+const { default: LanguageBar } = await import("../components/language-bar")
 
 export async function getStaticProps({ preview, locale }) {
   const formattedLocale = locale.split("-")[0]

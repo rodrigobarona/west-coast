@@ -1,23 +1,25 @@
-import { useRouter } from "next/router";
-import { useEffect, useRef } from "react";
+// Dynamic import for "next/router"
+const { useRouter } = await import("next/router")
+// Dynamic import for "react"
+const { useEffect, useRef } = await import("react")
 
 export default function Search() {
-  const searchedValue = useRef("");
-  const router = useRouter();
-  const { term } = router.query;
+  const searchedValue = useRef("")
+  const router = useRouter()
+  const { term } = router.query
 
   useEffect(() => {
     if (term) {
-      searchedValue.current.value = term;
+      searchedValue.current.value = term
     }
-  }, []);
+  }, [])
 
   const handleSearch = (event) => {
-    event.preventDefault();
+    event.preventDefault()
     if (searchedValue.current.value) {
-      router.push("/search/" + searchedValue.current.value);
+      router.push("/search/" + searchedValue.current.value)
     }
-  };
+  }
 
   return (
     <form onSubmit={handleSearch}>
@@ -38,5 +40,5 @@ export default function Search() {
         </button>
       </div>
     </form>
-  );
+  )
 }

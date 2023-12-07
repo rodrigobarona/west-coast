@@ -1,6 +1,9 @@
-import PostPreview from "../components/post-preview"
-import { useRouter } from "next/router"
-import i18n from "../lib/i18n"
+// Dynamic import for "../components/post-preview"
+const { default: PostPreview } = await import("../components/post-preview")
+// Dynamic import for "next/router"
+const { useRouter } = await import("next/router")
+// Dynamic import for "../lib/i18n"
+const { default: i18n } = await import("../lib/i18n")
 
 export default function MoreStories({ posts }) {
   const { locale } = useRouter()

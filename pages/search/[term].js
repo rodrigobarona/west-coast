@@ -1,40 +1,49 @@
-import { buildClient } from "@datocms/cma-client";
-import Link from "next/link";
-import { useRouter } from "next/router";
-import { useEffect } from "react";
-import { useSiteSearch } from "react-datocms";
-import Container from "../../components/container";
-import Intro from "../../components/intro";
-import LanguageBar from "../../components/language-bar";
-import Layout from "../../components/layout";
+// Dynamic import for "@datocms/cma-client"
+const { buildClient } = await import("@datocms/cma-client")
+// Dynamic import for "next/link"
+const { Link } = await import("next/link")
+// Dynamic import for "next/router"
+const { useRouter } = await import("next/router")
+// Dynamic import for "react"
+const { useEffect } = await import("react")
+// Dynamic import for "react-datocms"
+const { useSiteSearch } = await import("react-datocms")
+// Dynamic import for "../../components/container"
+const { default: Container } = await import("../../components/container")
+// Dynamic import for "../../components/intro"
+const { default: Intro } = await import("../../components/intro")
+// Dynamic import for "../../components/language-bar"
+const { default: LanguageBar } = await import("../../components/language-bar")
+// Dynamic import for "../../components/layout"
+const { default: Layout } = await import("../../components/layout")
 
 export async function getServerSideProps(context) {
-  const token = process.env.NEXT_EXAMPLE_CMS_DATOCMS_API_TOKEN_SITE_SEARCH;
-  const buildTriggerId = process.env.NEXT_EXAMPLE_CMS_DATOCMS_BUILD_TRIGGER_ID;
+  const token = process.env.NEXT_EXAMPLE_CMS_DATOCMS_API_TOKEN_SITE_SEARCH
+  const buildTriggerId = process.env.NEXT_EXAMPLE_CMS_DATOCMS_BUILD_TRIGGER_ID
   return {
     props: { token, buildTriggerId },
-  };
+  }
 }
 
 export default function Search(props) {
-  const router = useRouter();
-  const { term } = router.query;
+  const router = useRouter()
+  const { term } = router.query
 
   const client = buildClient({
     apiToken: props.token,
-  });
+  })
 
   const { state, data } = useSiteSearch({
     client,
     buildTriggerId: props.buildTriggerId,
     initialState: { locale: router.locale },
     highlightMatch: (text, key, context) => <strong key={key}>{text}</strong>,
-  });
+  })
 
   useEffect(() => {
-    state.setLocale(router.locale);
-    state.setQuery(term);
-  }, [term, router.locale]);
+    state.setLocale(router.locale)
+    state.setQuery(term)
+  }, [term, router.locale])
 
   return (
     <Layout>
@@ -43,12 +52,12 @@ export default function Search(props) {
         <Intro />
         {data &&
           data.pageResults.map((result) => {
-            const paramsArray = result.url.split("/");
-            const slug = paramsArray[paramsArray.length - 1];
-            const isNotHomePage = slug && slug != "it";
+            const paramsArray = result.url.split("/")
+            const slug = paramsArray[paramsArray.length - 1]
+            const isNotHomePage = slug && slug != "it"
 
             if (isNotHomePage) {
-              const formatedSlug = "/posts/" + slug;
+              const formatedSlug = "/posts/" + slug
 
               return (
                 <div key={result.id} className="mb-5">
@@ -61,10 +70,10 @@ export default function Search(props) {
                     {result.bodyExcerpt}
                   </p>
                 </div>
-              );
+              )
             }
           })}
       </Container>
     </Layout>
-  );
+  )
 }

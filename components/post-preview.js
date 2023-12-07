@@ -2,6 +2,7 @@ import Avatar from "../components/avatar"
 import Date from "../components/date"
 import CoverImage from "./cover-image"
 import Link from "next/link"
+import { generateAltFallback } from "../lib/imageUtils"
 
 export default function PostPreview({
   title,
@@ -19,7 +20,10 @@ export default function PostPreview({
             src={coverImage.url}
             width={coverImage.width}
             height={coverImage.height}
-            alt={coverImage.alt || coverImage.basename}
+            alt={
+              coverImage.alt ||
+              generateAltFallback(coverImage.basename, coverImage.smartTags)
+            }
             blurUpThumb={coverImage.blurUpThumb}
           />
         </Link>

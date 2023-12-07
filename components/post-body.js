@@ -3,6 +3,7 @@ import MuxPlayer from "@mux/mux-player-react/lazy"
 import Image from "next/image"
 import { Splide, SplideSlide } from "@splidejs/react-splide"
 import "@splidejs/react-splide/css"
+import { generateAltFallback } from "../lib/imageUtils"
 
 export default function PostBody({ content }) {
   return (
@@ -18,7 +19,13 @@ export default function PostBody({ content }) {
                     src={record.image.url}
                     width={record.image.width}
                     height={record.image.height}
-                    alt={record.image.alt || record.image.basename}
+                    alt={
+                      record.image.alt ||
+                      generateAltFallback(
+                        record.image.basename,
+                        record.image.smartTags
+                      )
+                    }
                     quality={75}
                     placeholder="blur"
                     loading="lazy"
@@ -95,7 +102,10 @@ export default function PostBody({ content }) {
                           src={slide.url}
                           width={700}
                           height={700}
-                          alt={slide.alt || slide.basename}
+                          alt={
+                            slide.alt ||
+                            generateAltFallback(slide.basename, slide.smartTags)
+                          }
                           quality={75}
                           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                           blurDataURL={slide.blurUpThumb}

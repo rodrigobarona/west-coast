@@ -21,7 +21,7 @@ export default function CoverImage({
       quality={80}
       placeholder={priority ? "empty" : "blur"}
       loading={priority ? "eager" : "lazy"}
-      blurDataURL={priority ? undefined : blurUpThumb}
+      {...(priority ? {} : { blurDataURL: blurUpThumb })}
       {...(priority ? { priority } : {})}
       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 50vw"
       className={cn("shadow-small", {

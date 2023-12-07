@@ -91,8 +91,6 @@ export default function PostBody({ content }) {
                       padding: 0,
                       paginationKeyboard: true,
                       drag: true,
-                      lazyLoad: "nearby",
-                      preloadPages: "2",
                       width: "700px",
                       heightRatio: 1,
                     }}
@@ -102,7 +100,6 @@ export default function PostBody({ content }) {
                       <SplideSlide key={index}>
                         <Image
                           src={slide.url}
-                          data-splide-lazy-srcset={slide.url}
                           width={700}
                           height={700}
                           alt={

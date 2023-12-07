@@ -21,6 +21,7 @@ export default function HeroPost({
             height={coverImage.height}
             alt={coverImage.alt || coverImage.basename}
             blurUpThumb={coverImage.blurUpThumb}
+            priority="true"
           />
         </Link>
       </div>

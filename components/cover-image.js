@@ -19,9 +19,9 @@ export default function CoverImage({
       height={height}
       alt={alt}
       quality={80}
-      placeholder={priority ? "empty" : "blur"}
-      loading={priority ? "eager" : "lazy"}
-      {...(priority ? { priority } : { blurDataURL: blurUpThumb })}
+      {...(priority
+        ? { priority: "true" }
+        : { loading: "lazy", placeholder: "blur", blurDataURL: blurUpThumb })}
       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 50vw"
       className={cn("shadow-small", {
         "hover:shadow-medium transition-shadow duration-200": slug,

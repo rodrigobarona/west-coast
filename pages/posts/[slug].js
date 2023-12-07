@@ -51,7 +51,7 @@ export async function getStaticProps({ params, preview = false, locale }) {
               ...on ImageBlockRecord {
                 id
                 image {
-                  url (imgixParams: {auto: format, fit: clamp, w: 800, crop: focalpoint}) 
+                  url (imgixParams: {auto: format, fit: clamp, w: 700, crop: focalpoint}) 
                   width
                   height
                   basename
@@ -99,7 +99,7 @@ export async function getStaticProps({ params, preview = false, locale }) {
                   basename
                   alt
                   blurUpThumb
-                  url(imgixParams: {auto: format, fit: crop, w: 800, h: 800, crop: focalpoint})
+                  url(imgixParams: {auto: format, fit: crop, w: 700, h: 700, crop: focalpoint})
                 }
               }
             }

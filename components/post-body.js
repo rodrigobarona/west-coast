@@ -83,8 +83,9 @@ export default function PostBody({ content }) {
                       padding: 0,
                       paginationKeyboard: true,
                       drag: true,
-                      lazyLoad: "nearby",
-                      preloadPages: "1",
+                      lazyLoad: "sequential",
+                      width: "700px",
+                      heightRatio: 1,
                     }}
                     onMoved={(splide, newIndex) => {}}
                   >
@@ -92,8 +93,8 @@ export default function PostBody({ content }) {
                       <SplideSlide key={index}>
                         <Image
                           data-splide-lazy={slide.url}
-                          width={1000}
-                          height={1000}
+                          width={700}
+                          height={700}
                           alt={slide.alt || slide.basename}
                           quality={75}
                           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

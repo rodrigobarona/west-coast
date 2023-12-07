@@ -43,6 +43,7 @@ export default function PostBody({ content }) {
                   playbackId={record.video.video.muxPlaybackId}
                   placeholder={record.video.blurUpThumb}
                   style={{
+                    margin: "1rem 0 0",
                     aspectRatio: ` ${record.video.width}/${record.video.height}`,
                   }}
                   metadata={{

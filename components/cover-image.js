@@ -17,7 +17,7 @@ export default function CoverImage({
       width={width}
       height={height}
       alt={alt}
-      quality={90}
+      quality={80}
       priority={priority}
       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 50vw"
       className={cn("shadow-small", {

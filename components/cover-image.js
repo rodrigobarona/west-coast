@@ -17,9 +17,9 @@ export default function CoverImage({
       width={width}
       height={height}
       alt={alt}
-      quality={75}
+      quality={90}
       priority={priority}
-      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 50vw"
       className={cn("shadow-small", {
         "hover:shadow-medium transition-shadow duration-200": slug,
       })}

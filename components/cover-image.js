@@ -1,9 +1,6 @@
-// Dynamic import for "next/image"
-const { Image } = await import("next/image")
-// Dynamic import for "classnames"
-const cn = await import("classnames")
-// Dynamic import for "next/link"
-const { Link } = await import("next/link")
+import Image from "next/image"
+import cn from "classnames"
+import Link from "next/link"
 
 export default function CoverImage({
   title,

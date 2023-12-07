@@ -1,5 +1,4 @@
-// Dynamic import for "next/link"
-const { Link } = await import("next/link")
+import Link from 'next/link'
 
 export default function Header() {
   return (

@@ -1,13 +1,8 @@
-// Dynamic import for "../components/avatar"
-const { default: Avatar } = await import("../components/avatar")
-// Dynamic import for "../components/date"
-const { default: Date } = await import("../components/date")
-// Dynamic import for "../components/cover-image"
-const { default: CoverImage } = await import("../components/cover-image")
-// Dynamic import for "../components/post-title"
-const { default: PostTitle } = await import("../components/post-title")
-// Dynamic import for "../lib/imageUtils"
-const { generateAltFallback } = await import("../lib/imageUtils")
+import Avatar from "../components/avatar"
+import Date from "../components/date"
+import CoverImage from "../components/cover-image"
+import PostTitle from "../components/post-title"
+import { generateAltFallback } from "../lib/imageUtils"
 
 export default function PostHeader({ title, coverImage, date, author }) {
   return (

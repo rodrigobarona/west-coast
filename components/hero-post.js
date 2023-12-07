@@ -1,13 +1,8 @@
-// Dynamic import for "../components/avatar"
-const { default: Avatar } = await import("../components/avatar")
-// Dynamic import for "../components/date"
-const { default: Date } = await import("../components/date")
-// Dynamic import for "../components/cover-image"
-const { default: CoverImage } = await import("../components/cover-image")
-// Dynamic import for "next/link"
-const { Link } = await import("next/link")
-// Dynamic import for "../lib/imageUtils"
-const { generateAltFallback } = await import("../lib/imageUtils")
+import Avatar from "../components/avatar"
+import Date from "../components/date"
+import CoverImage from "../components/cover-image"
+import Link from "next/link"
+import { generateAltFallback } from "../lib/imageUtils"
 
 export default function HeroPost({
   title,

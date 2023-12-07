@@ -1,10 +1,8 @@
-// Dynamic import for "next/link"
-const { Link } = await import("next/link")
-// Dynamic import for "next/router"
-const { useRouter } = await import("next/router")
+import Link from "next/link";
+import { useRouter } from "next/router";
 
 export default function LanguageBar() {
-  const currentPath = useRouter().asPath
+  const currentPath = useRouter().asPath;
   return (
     <section className="flex-col md:flex-row flex items-center md:justify-end mr-0 mt-0 mb-0 md:mb-0">
       <Link legacyBehavior href={currentPath} locale="pt">
@@ -23,5 +21,5 @@ export default function LanguageBar() {
         </a>
       </Link>
     </section>
-  )
+  );
 }

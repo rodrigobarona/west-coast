@@ -1,5 +1,4 @@
-// Dynamic import for "./search"
-const { default: Search } = await import("./search")
+import Search from "./search";
 
 export default function Intro() {
   return (
@@ -11,5 +10,5 @@ export default function Intro() {
         <Search />
       </div>
     </section>
-  )
+  );
 }

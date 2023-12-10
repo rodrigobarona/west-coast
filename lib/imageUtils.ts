@@ -5,7 +5,7 @@ export function generateAltFallback(basename: string, smartTags: any[]) {
   // Clean the basename using regex
   const cleanedBasename = basename
     .replace(/[^\w\s]|[_-]/g, " ") // Replace special characters, underscores, and hyphens with spaces
-    .replace(/\b\d{1,3}\b|\b(?!18\d{2}|2\d{3})\d{4}\b|\b\d{5,}\b/g, " ") // Remove all digits except 4-digit numbers between 1800 and 2299
+    .replace(/\b\d{1,3}\b|\b(?!18\d{2}|2\d{3})\d{4}\b|\b\d{5,}\b/g, " ") // Remove all digits except 4-digit numbers between 1800 and 2999
     .replace(/\s{2,}/g, " ") // Replace more than one space with a single space
     .trim() // Remove leading and trailing spaces
     .replace(/\b\w/g, (char) => char.toUpperCase()) // Uppercase the first letter of each word

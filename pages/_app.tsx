@@ -2,6 +2,7 @@ import "@/styles/globals.css"
 import type { AppProps } from "next/app"
 import { Analytics } from "@vercel/analytics/react"
 import { Auth0Provider } from "@auth0/auth0-react"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -13,6 +14,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <Component {...pageProps} />
       </Auth0Provider>
       <Analytics />
+      <SpeedInsights />
     </>
   )
 }

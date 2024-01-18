@@ -7,7 +7,6 @@ export default async function fetchComment(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  console.log(req.headers)
   const url = clearUrl(req.headers.referer)
 
   if (!redis) {

@@ -7,6 +7,7 @@ export default async function fetchComment(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
+  console.log(req.headers)
   const url = clearUrl(req.headers.referer)
 
   if (!redis) {
@@ -18,7 +19,7 @@ export default async function fetchComment(
     const rawComments = await redis.lrange(url, 0, -1)
 
     // string data to object
-    const comments = rawComments.map((c) => {
+    const comments = rawComments?.map((c) => {
       const comment: Comment = JSON.parse(c)
       delete comment.user.email
       return comment

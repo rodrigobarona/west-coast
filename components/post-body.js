@@ -4,6 +4,7 @@ import Image from "next/image"
 import { Splide, SplideSlide } from "@splidejs/react-splide"
 import "@splidejs/react-splide/css"
 import { generateAltFallback } from "../lib/imageUtils"
+import Comment from "./comment"
 
 export default function PostBody({ content }) {
   return (
@@ -126,6 +127,7 @@ export default function PostBody({ content }) {
           }}
         />
       </div>
+      <Comment />
     </div>
   )
 }

@@ -1,6 +1,6 @@
-import type { Comment } from '../../interfaces'
-import distanceToNow from '../../lib/dateRelative'
-import { useAuth0 } from '@auth0/auth0-react'
+import type { Comment } from "../../interfaces"
+import distanceToNow from "../../lib/dateRelative"
+import { useAuth0 } from "@auth0/auth0-react"
 
 type CommentListProps = {
   comments?: Comment[]
@@ -12,7 +12,8 @@ export default function CommentList({ comments, onDelete }: CommentListProps) {
 
   return (
     <div className="space-y-6 mt-10">
-      {comments && comments.length &&
+      {comments &&
+        comments.length > 0 &&
         comments.map((comment) => {
           const isAuthor = user && user.sub === comment.user.sub
           const isAdmin =

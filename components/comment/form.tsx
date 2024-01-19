@@ -1,4 +1,6 @@
 import { useAuth0 } from "@auth0/auth0-react"
+import { useRouter } from "next/router"
+import i18n from "../../lib/i18n"
 
 type CommentFormProps = {
   text: string
@@ -13,8 +15,12 @@ export default function CommentForm({
 }: CommentFormProps) {
   const { isAuthenticated, logout, loginWithPopup } = useAuth0()
 
+  const { locale } = useRouter()
   return (
     <form onSubmit={onSubmit}>
+      <h3 className="text-gray-900 mb-8 font-bold text-xl">
+        {i18n.coments.headline[locale]}
+      </h3>
       <textarea
         className="flex w-full max-h-40 p-3 rounded resize-y bg-gray-200 text-gray-900 placeholder-gray-500"
         rows={2}

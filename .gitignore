@@ -8,3 +8,4 @@ out/
 .env.local
 yarn-error.log
 .DS_Store
+.env*.local

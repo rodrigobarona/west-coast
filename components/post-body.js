@@ -1,10 +1,10 @@
-import { StructuredText } from "react-datocms"
-import MuxPlayer from "@mux/mux-player-react/lazy"
-import Image from "next/image"
-import { Splide, SplideSlide } from "@splidejs/react-splide"
-import "@splidejs/react-splide/css"
-import { generateAltFallback } from "../lib/imageUtils"
-import Comment from "./comment"
+import { StructuredText } from "react-datocms";
+import MuxPlayer from "@mux/mux-player-react/lazy";
+import Image from "next/image";
+import { Splide, SplideSlide } from "@splidejs/react-splide";
+import "@splidejs/react-splide/css";
+import { generateAltFallback } from "../lib/imageUtils";
+import Comment from "./comment";
 
 export default function PostBody({ content }) {
   return (
@@ -35,9 +35,13 @@ export default function PostBody({ content }) {
                     className="lg:min-w-2xl"
                   />
                 </div>
-              )
+              );
             }
+
             if (record.__typename === "VideoBlockRecord") {
+              const timeline = record.timeline; // or false, depending on your condition
+              const startInSeconds = record.startVideo; // define your start time in seconds
+              const endInSeconds = record.endVideo; // define your end time in seconds
               return (
                 <MuxPlayer
                   streamType="on-demand"
@@ -52,16 +56,25 @@ export default function PostBody({ content }) {
                     video_title: record.video.title || record.video.basename,
                     viewer_user_id: record.video.id,
                   }}
+                  {...(timeline
+                    ? {
+                        "data-offset": `${startInSeconds} ${endInSeconds}`,
+                        "data-offset-shim": "",
+                        "data-offset-media": "media",
+                        playsinline: "",
+                      }
+                    : {})}
                 />
-              )
+              );
             }
+
             if (record.__typename === "AudioBlockRecord") {
               return (
                 <audio controls className="w-full">
                   <source src={record.audio.url} type={record.audio.mimeType} />
                   Your browser does not support the audio element.
                 </audio>
-              )
+              );
             }
             if (record.__typename === "GalleryBlockRecord") {
               const responsive = {
@@ -80,7 +93,7 @@ export default function PostBody({ content }) {
                   items: 1,
                   slidesToSlide: 1, // optional, default to 1.
                 },
-              }
+              };
 
               return (
                 <div className="not-prose">
@@ -117,17 +130,17 @@ export default function PostBody({ content }) {
                     ))}
                   </Splide>
                 </div>
-              )
+              );
             }
             return (
               <>
                 <pre>{JSON.stringify(record, null, 2)}</pre>
               </>
-            )
+            );
           }}
         />
       </div>
       <Comment />
     </div>
-  )
+  );
 }

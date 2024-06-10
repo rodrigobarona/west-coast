@@ -1,54 +1,54 @@
 // Dynamic import for "date-fns"
-import { format } from "date-fns"
+import { format } from "date-fns";
 // Dynamic import for "next/head"
-const { default: Head } = await import("next/head")
+const { default: Head } = await import("next/head");
 // Dynamic import for "react-datocms"
-const { renderMetaTags, useQuerySubscription } = await import("react-datocms")
+const { renderMetaTags, useQuerySubscription } = await import("react-datocms");
 // Dynamic import for "../../components/container"
-const { default: Container } = await import("../../components/container")
+const { default: Container } = await import("../../components/container");
 // Dynamic import for "../../components/comment"
-const { default: Comment } = await import("../../components/comment")
+const { default: Comment } = await import("../../components/comment");
 // Dynamic import for "../../components/header"
-const { default: Header } = await import("../../components/header")
+const { default: Header } = await import("../../components/header");
 // Dynamic import for "../../components/layout"
-const { default: Layout } = await import("../../components/layout")
+const { default: Layout } = await import("../../components/layout");
 // Dynamic import for "../../components/more-stories"
-const { default: MoreStories } = await import("../../components/more-stories")
+const { default: MoreStories } = await import("../../components/more-stories");
 // Dynamic import for "../../components/post-body"
-const { default: PostBody } = await import("../../components/post-body")
+const { default: PostBody } = await import("../../components/post-body");
 // Dynamic import for "../../components/post-header"
-const { default: PostHeader } = await import("../../components/post-header")
+const { default: PostHeader } = await import("../../components/post-header");
 // Dynamic import for "../../components/section-separator"
 const { default: SectionSeparator } = await import(
   "../../components/section-separator"
-)
+);
 
 // Dynamic import for "next/router"
-import { useRouter } from "next/router"
+import { useRouter } from "next/router";
 // Dynamic import for "../../lib/datocms"
-const { request } = await import("../../lib/datocms")
+const { request } = await import("../../lib/datocms");
 // Dynamic import for "../../lib/fragments"
-const { metaTagsFragment } = await import("../../lib/fragments")
+const { metaTagsFragment } = await import("../../lib/fragments");
 // Dynamic import for "../../components/language-bar"
-const { default: LanguageBar } = await import("../../components/language-bar")
+const { default: LanguageBar } = await import("../../components/language-bar");
 
 export async function getStaticPaths({ locales }) {
-  const data = await request({ query: `{ allPosts { slug } }` })
-  const pathsArray = []
+  const data = await request({ query: `{ allPosts { slug } }` });
+  const pathsArray = [];
   data.allPosts.map((post) => {
     locales.map((language) => {
-      pathsArray.push({ params: { slug: post.slug }, locale: language })
-    })
-  })
+      pathsArray.push({ params: { slug: post.slug }, locale: language });
+    });
+  });
 
   return {
     paths: pathsArray,
     fallback: false,
-  }
+  };
 }
 
 export async function getStaticProps({ params, preview = false, locale }) {
-  const formattedLocale = locale.split("-")[0]
+  const formattedLocale = locale.split("-")[0];
   const graphqlRequest = {
     query: `
       query PostBySlug($slug: String) {
@@ -81,6 +81,9 @@ export async function getStaticProps({ params, preview = false, locale }) {
               }
               ...on VideoBlockRecord {
                 id
+                timeline
+                startVideo
+                endVideo
                 video {
                   url
                   title
@@ -95,6 +98,8 @@ export async function getStaticProps({ params, preview = false, locale }) {
                     duration
                     muxPlaybackId
                     muxAssetId
+                    duration
+                    framerate
                     streamingUrl
                     thumbnailUrl
                     mp4Url(res: high)
@@ -175,7 +180,7 @@ export async function getStaticProps({ params, preview = false, locale }) {
     variables: {
       slug: params.slug,
     },
-  }
+  };
 
   return {
     props: {
@@ -191,15 +196,15 @@ export async function getStaticProps({ params, preview = false, locale }) {
           },
       preview,
     },
-  }
+  };
 }
 
 export default function Post({ subscription, preview }) {
   const {
     data: { site, post, morePosts },
-  } = useQuerySubscription(subscription)
+  } = useQuerySubscription(subscription);
 
-  const metaTags = post.seo.concat(site.favicon)
+  const metaTags = post.seo.concat(site.favicon);
 
   return (
     <Layout preview={preview}>
@@ -221,5 +226,5 @@ export default function Post({ subscription, preview }) {
         {morePosts.length > 0 && <MoreStories posts={morePosts} />}
       </Container>
     </Layout>
-  )
+  );
 }

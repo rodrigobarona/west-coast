@@ -1,10 +1,13 @@
 import { StructuredText } from "react-datocms";
+
 import MuxPlayer from "@mux/mux-player-react/lazy";
+
 import Image from "next/image";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 import { generateAltFallback } from "../lib/imageUtils";
 import Comment from "./comment";
+import Script from "next/script";
 
 export default function PostBody({ content }) {
   return (
@@ -43,28 +46,37 @@ export default function PostBody({ content }) {
               const startInSeconds = record.startVideo; // define your start time in seconds
               const endInSeconds = record.endVideo; // define your end time in seconds
               return (
-                <MuxPlayer
-                  streamType="on-demand"
-                  playbackId={record.video.video.muxPlaybackId}
-                  placeholder={record.video.blurUpThumb}
-                  style={{
-                    margin: "1rem 0 0",
-                    aspectRatio: ` ${record.video.width}/${record.video.height}`,
-                  }}
-                  metadata={{
-                    video_id: record.video.video.muxAssetId,
-                    video_title: record.video.title || record.video.basename,
-                    viewer_user_id: record.video.id,
-                  }}
-                  {...(timeline
-                    ? {
-                        "data-offset": `${startInSeconds} ${endInSeconds}`,
-                        "data-offset-shim": "",
-                        "data-offset-media": "media",
-                        playsinline: "",
-                      }
-                    : {})}
-                />
+                <>
+                  {timeline && (
+                    <Script
+                      type="module"
+                      src="/js/media-offset-attribute.js"
+                      strategy="afterInteractive"
+                    />
+                  )}
+                  <MuxPlayer
+                    streamType="on-demand"
+                    playbackId={record.video.video.muxPlaybackId}
+                    placeholder={record.video.blurUpThumb}
+                    style={{
+                      margin: "1rem 0 0",
+                      aspectRatio: ` ${record.video.width}/${record.video.height}`,
+                    }}
+                    metadata={{
+                      video_id: record.video.video.muxAssetId,
+                      video_title: record.video.title || record.video.basename,
+                      viewer_user_id: record.video.id,
+                    }}
+                    {...(timeline
+                      ? {
+                          "data-offset": `${startInSeconds} ${endInSeconds}`,
+                          "data-offset-shim": "",
+                          "data-offset-media": "media",
+                          playsinline: "",
+                        }
+                      : {})}
+                  />
+                </>
               );
             }
 

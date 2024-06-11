@@ -1,28 +1,28 @@
 // Dynamic import for "next/head"
-const { default: Head } = await import("next/head")
+const { default: Head } = await import("next/head");
 // Dynamic import for "react-datocms"
-const { renderMetaTags, useQuerySubscription } = await import("react-datocms")
+const { renderMetaTags, useQuerySubscription } = await import("react-datocms");
 // Dynamic import for "../components/container"
-const { default: Container } = await import("../components/container")
+const { default: Container } = await import("../components/container");
 // Dynamic import for "../components/hero-post"
-const { default: HeroPost } = await import("../components/hero-post")
+const { default: HeroPost } = await import("../components/hero-post");
 // Dynamic import for "../components/intro"
-const { default: Intro } = await import("../components/intro")
+const { default: Intro } = await import("../components/intro");
 // Dynamic import for "../components/layout"
-const { default: Layout } = await import("../components/layout")
+const { default: Layout } = await import("../components/layout");
 // Dynamic import for "../components/more-stories"
-const { default: MoreStories } = await import("../components/more-stories")
+const { default: MoreStories } = await import("../components/more-stories");
 // Dynamic import for "next/router"
-import { useRouter } from "next/router"
+import { useRouter } from "next/router";
 // Dynamic import for "../components/language-bar"
-const { default: LanguageBar } = await import("../components/language-bar")
+const { default: LanguageBar } = await import("../components/language-bar");
 // Dynamic import for "../lib/datocms"
-const { request } = await import("../lib/datocms")
+const { request } = await import("../lib/datocms");
 // Dynamic import for "../lib/fragments"
-const { metaTagsFragment } = await import("../lib/fragments")
+const { metaTagsFragment } = await import("../lib/fragments");
 
 export async function getStaticProps({ preview, locale }) {
-  const formattedLocale = locale.split("-")[0]
+  const formattedLocale = locale.split("-")[0];
   const graphqlRequest = {
     query: `
       {
@@ -62,7 +62,7 @@ export async function getStaticProps({ preview, locale }) {
       ${metaTagsFragment}
     `,
     preview,
-  }
+  };
 
   return {
     props: {
@@ -78,19 +78,19 @@ export async function getStaticProps({ preview, locale }) {
             initialData: await request(graphqlRequest),
           },
     },
-  }
+  };
 }
 
 export default function Index({ subscription }) {
   const {
     data: { allPosts, site, blog },
-  } = useQuerySubscription(subscription)
+  } = useQuerySubscription(subscription);
 
-  const { locale, locales, asPath } = useRouter().locale
+  const { locale, locales, asPath } = useRouter().locale;
 
-  const heroPost = allPosts[0]
-  const morePosts = allPosts.slice(1)
-  const metaTags = blog.seo.concat(site.favicon)
+  const heroPost = allPosts[0];
+  const morePosts = allPosts.slice(1);
+  const metaTags = blog.seo.concat(site.favicon);
 
   return (
     <>
@@ -113,5 +113,5 @@ export default function Index({ subscription }) {
         </Container>
       </Layout>
     </>
-  )
+  );
 }

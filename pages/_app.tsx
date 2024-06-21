@@ -18,18 +18,6 @@ if (typeof window !== "undefined") {
   });
 }
 
-export default function App({
-  Component,
-  pageProps: { session, ...pageProps },
-}) {
-  return (
-    <>
-      <PostHogProvider client={posthog}>
-        <Component {...pageProps} />
-      </PostHogProvider>
-    </>
-  );
-}
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
@@ -37,7 +25,9 @@ export default function App({ Component, pageProps }: AppProps) {
         clientId={process.env.NEXT_PUBLIC_AUTH0_CLIENT_ID}
         domain={process.env.NEXT_PUBLIC_AUTH0_DOMAIN}
       >
-        <Component {...pageProps} />
+        <PostHogProvider client={posthog}>
+          <Component {...pageProps} />
+        </PostHogProvider>
       </Auth0Provider>
       <Analytics />
       <SpeedInsights />

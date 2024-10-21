@@ -93,17 +93,6 @@ export async function getStaticProps({ params, preview = false, locale }) {
                   width
                   blurUpThumb
                   blurhash
-                  video {
-                    framerate
-                    duration
-                    muxPlaybackId
-                    muxAssetId
-                    duration
-                    framerate
-                    streamingUrl
-                    thumbnailUrl
-                    mp4Url(res: high)
-                  }
                   height
                   width
                   mimeType

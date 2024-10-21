@@ -76,10 +76,10 @@ function VideoBlock({ record }) {
   }, []);
 
   return (
-    <div className="not-prose mb-4">
+    <div className="not-prose my-4">
       <video
         ref={videoRef}
-        className="video-js vjs-default-skin"
+        className="video-js vjs-forest-skin"
         controls
         preload="metadata"
         data-offset={timeline ? `${startInSeconds} ${endInSeconds}` : undefined}

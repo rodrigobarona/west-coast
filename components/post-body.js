@@ -21,6 +21,7 @@ export default function PostBody({ content }) {
                 <div className="not-prose">
                   <Image
                     src={record.image.url}
+                    loader={({ src, width }) => `${src}?w=${width}`}
                     width={record.image.width}
                     height={record.image.height}
                     alt={
@@ -82,8 +83,14 @@ export default function PostBody({ content }) {
 
             if (record.__typename === "AudioBlockRecord") {
               return (
-                <audio controls className="w-full">
+                <audio controls>
                   <source src={record.audio.url} type={record.audio.mimeType} />
+                  <track
+                    kind="captions"
+                    src={record.audio.captionsUrl}
+                    srcLang="en"
+                    label="English"
+                  />
                   Your browser does not support the audio element.
                 </audio>
               );
@@ -123,21 +130,28 @@ export default function PostBody({ content }) {
                     onMoved={(splide, newIndex) => {}}
                   >
                     {record.gallery.map((slide, index) => (
-                      <SplideSlide key={index}>
-                        <Image
-                          src={slide.url}
-                          width={700}
-                          height={700}
-                          alt={
-                            slide.alt ||
-                            generateAltFallback(slide.basename, slide.smartTags)
-                          }
-                          quality={75}
-                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                          placeholder="blur"
-                          loading="lazy"
-                          blurDataURL={slide.blurUpThumb}
-                        />
+                      <SplideSlide key={slide.id}>
+                        <div className="relative aspect-square overflow-hidden">
+                          <Image
+                            src={slide.url}
+                            loader={({ src }) => `${src}&w=700&h=700`}
+                            fit="cover"
+                            width={slide.width}
+                            height={slide.height}
+                            alt={
+                              slide.alt ||
+                              generateAltFallback(
+                                slide.basename,
+                                slide.smartTags
+                              )
+                            }
+                            quality={75}
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                            placeholder="blur"
+                            loading="lazy"
+                            blurDataURL={slide.blurUpThumb}
+                          />
+                        </div>
                       </SplideSlide>
                     ))}
                   </Splide>

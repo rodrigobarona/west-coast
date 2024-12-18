@@ -125,7 +125,7 @@ export async function getStaticProps({ params, preview = false, locale }) {
                   alt
                   blurUpThumb
                   smartTags
-                  url(imgixParams: {auto: format, fit: crop, w: 700, h: 700, crop: focalpoint})
+                  url(imgixParams: {auto: format, fit: crop, crop: focalpoint})
                 }
               }
             }

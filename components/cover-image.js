@@ -15,7 +15,8 @@ export default function CoverImage({
   const image = (
     <Image
       src={src}
-      loader={({ src, width }) => `${src}?w=${width}`}
+      loader={({ src, width }) => `${src}&w=2000&h=1000`}
+      fit="cover"
       width={width}
       height={height}
       alt={alt}

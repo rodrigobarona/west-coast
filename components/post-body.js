@@ -21,7 +21,7 @@ export default function PostBody({ content }) {
                 <div className="not-prose">
                   <Image
                     src={record.image.url}
-                    loader={({ src, width }) => `${src}?w=${width}`}
+                    loader={({ src, width }) => `${src}&w=${record.image.width}&h=${record.image.height}`}
                     width={record.image.width}
                     height={record.image.height}
                     alt={

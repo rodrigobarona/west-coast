@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"; // Add this line
+import { useState, useEffect, useRef } from "react"; // Add this line
 // Dynamic import for "next/head"
 const { default: Head } = await import("next/head");
 // Dynamic import for "react-datocms"
@@ -97,6 +97,7 @@ export default function Index({ subscription }) {
   const [skip, setSkip] = useState(1 + pageSize); // Skip the first 'pageSize' posts for the next load
   const [loading, setLoading] = useState(false);
   const [hasMore, setHasMore] = useState(true);
+  const loadMoreButtonRef = useRef(null);
 
   const loadMorePosts = async () => {
     if (loading || !hasMore) return; // Prevent multiple requests
@@ -152,6 +153,27 @@ export default function Index({ subscription }) {
     }
   };
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          loadMorePosts();
+        }
+      },
+      { threshold: 1.0 } // Trigger when the button is fully in view
+    );
+
+    if (loadMoreButtonRef.current) {
+      observer.observe(loadMoreButtonRef.current);
+    }
+
+    return () => {
+      if (loadMoreButtonRef.current) {
+        observer.unobserve(loadMoreButtonRef.current);
+      }
+    };
+  }, [loadMoreButtonRef, hasMore, loading]);
+
   return (
     <>
       <Layout preview={subscription.preview}>
@@ -173,9 +195,9 @@ export default function Index({ subscription }) {
           {hasMore && (
             <div className="flex justify-center mb-12">
               <button
-                onClick={loadMorePosts}
+                ref={loadMoreButtonRef}
                 type="button"
-                className=" mx-auto text-white right-2.5 bottom-2.5 bg-gray-900 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 transition duration-200 ease-in-out"
+                className="mx-auto text-white right-2.5 bottom-2.5 bg-gray-900 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 transition duration-200 ease-in-out"
               >
                 Load more posts
               </button>

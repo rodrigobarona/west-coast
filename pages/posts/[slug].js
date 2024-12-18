@@ -1,5 +1,3 @@
-// Dynamic import for "date-fns"
-import { format } from "date-fns";
 // Dynamic import for "next/head"
 const { default: Head } = await import("next/head");
 // Dynamic import for "react-datocms"
@@ -33,7 +31,7 @@ const { metaTagsFragment } = await import("../../lib/fragments");
 const { default: LanguageBar } = await import("../../components/language-bar");
 
 export async function getStaticPaths({ locales }) {
-  const data = await request({ query: `{ allPosts { slug } }` });
+  const data = await request({ query: "{ allPosts { slug } }" });
   const pathsArray = [];
   data.allPosts.map((post) => {
     locales.map((language) => {

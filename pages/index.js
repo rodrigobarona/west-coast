@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react"; // Add this line
 // Dynamic import for "next/head"
 const { default: Head } = await import("next/head");
 // Dynamic import for "react-datocms"
@@ -86,11 +87,70 @@ export default function Index({ subscription }) {
     data: { allPosts, site, blog },
   } = useQuerySubscription(subscription);
 
-  const { locale, locales, asPath } = useRouter().locale;
+  const { locale } = useRouter();
 
   const heroPost = allPosts[0];
-  const morePosts = allPosts.slice(1);
   const metaTags = blog.seo.concat(site.favicon);
+
+  const pageSize = 10; // Fetch 20 posts from the server
+  const [posts, setPosts] = useState(allPosts.slice(1, 1 + pageSize)); // Start with the first 'pageSize' posts after the featured post
+  const [skip, setSkip] = useState(1 + pageSize); // Skip the first 'pageSize' posts for the next load
+  const [loading, setLoading] = useState(false);
+  const [hasMore, setHasMore] = useState(true);
+
+  const loadMorePosts = async () => {
+    if (loading || !hasMore) return; // Prevent multiple requests
+    setLoading(true);
+
+    const graphqlRequest = {
+      query: `
+        {
+          allPosts(locale: ${
+            locale.split("-")[0]
+          }, orderBy: date_DESC, first: ${pageSize}, skip: ${skip}) {
+            title
+            slug
+            excerpt
+            date
+            coverImage {
+              url(imgixParams: {auto: format, fit: crop, w: 2000, h: 1000, crop: focalpoint })
+              width
+              height
+              basename
+              alt
+              blurUpThumb
+              smartTags
+            }
+            author {
+              name
+              picture {
+                url(imgixParams: {auto: format, fit: crop, w: 100, h: 100, sat: -100})
+              }
+            }
+          }
+        }
+      `,
+    };
+
+    try {
+      const response = await request(graphqlRequest);
+      const newPosts = response.allPosts;
+
+      // Use pageSize to determine how many posts to add
+      const postsToAdd = newPosts.slice(0, pageSize); // Only take the first 'pageSize' posts from the new results
+
+      if (postsToAdd.length > 0) {
+        setPosts((prevPosts) => [...prevPosts, ...postsToAdd]);
+        setSkip((prevSkip) => prevSkip + pageSize); // Increment skip by pageSize for the next load
+      } else {
+        setHasMore(false); // No more posts to load
+      }
+    } catch (error) {
+      console.error("Error loading more posts:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <>
@@ -109,7 +169,18 @@ export default function Index({ subscription }) {
               excerpt={heroPost.excerpt}
             />
           )}
-          {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+          {posts.length > 0 && <MoreStories posts={posts} />}
+          {hasMore && (
+            <div className="flex justify-center mb-12">
+              <button
+                onClick={loadMorePosts}
+                type="button"
+                className=" mx-auto text-white right-2.5 bottom-2.5 bg-gray-900 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 transition duration-200 ease-in-out"
+              >
+                Load more posts
+              </button>
+            </div>
+          )}
         </Container>
       </Layout>
     </>

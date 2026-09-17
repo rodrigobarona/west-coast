@@ -1,0 +1,156 @@
+{
+  "id": "104915",
+  "type": "site",
+  "name": "West Coast",
+  "theme": {
+    "logo": null,
+    "type": "custom",
+    "dark_color": {
+      "red": 80,
+      "green": 50,
+      "blue": 83,
+      "alpha": 255
+    },
+    "light_color": {
+      "red": 229,
+      "green": 249,
+      "blue": 252,
+      "alpha": 255
+    },
+    "accent_color": {
+      "red": 75,
+      "green": 199,
+      "blue": 216,
+      "alpha": 255
+    },
+    "primary_color": {
+      "red": 226,
+      "green": 87,
+      "blue": 87,
+      "alpha": 255
+    },
+    "hue": null
+  },
+  "imgix_host": "www.datocms-assets.com",
+  "domain": null,
+  "locales": [
+    "pt",
+    "es",
+    "en"
+  ],
+  "last_data_change_at": "2026-09-17T17:13:48.576Z",
+  "global_seo": {
+    "pt": {
+      "site_name": "West Coast: Desde Portugal a California",
+      "fallback_seo": {
+        "title": "Desde Portugal a California",
+        "description": "Uma historia da minha familia sobre a vida em Los Angeles e Sul de California",
+        "image": "64467718",
+        "twitter_card": "summary_large_image"
+      },
+      "title_suffix": " - West Coast",
+      "twitter_account": null,
+      "facebook_page_url": ""
+    },
+    "es": {
+      "site_name": "West Coast: Desde Portugal a California",
+      "fallback_seo": {
+        "title": "Desde Portugal a California",
+        "description": "Una historia de mi familia sobre la vida en Los Ángeles y el sur de California",
+        "image": "64467718",
+        "twitter_card": "summary"
+      },
+      "title_suffix": " - West Coast",
+      "twitter_account": null,
+      "facebook_page_url": ""
+    },
+    "en": {
+      "site_name": "West Coast: From Portugal to California",
+      "fallback_seo": {
+        "title": "From Portugal to California",
+        "description": "A story from my family about life in Los Angeles and Southern California",
+        "image": null,
+        "twitter_card": "summary"
+      },
+      "title_suffix": " - West Coast",
+      "twitter_account": null,
+      "facebook_page_url": ""
+    }
+  },
+  "favicon": "22808869",
+  "no_index": false,
+  "timezone": "America/Los_Angeles",
+  "force_use_of_sandbox_environments": false,
+  "assets_cdn_default_settings": {
+    "image": {},
+    "video": {
+      "disable_serving_raw_videos": false
+    }
+  },
+  "google_maps_api_token": null,
+  "internal_domain": "west-coast.admin.datocms.com",
+  "require_2fa": false,
+  "ip_tracking_enabled": true,
+  "account": {
+    "id": "98982",
+    "type": "account"
+  },
+  "owner": {
+    "id": "98982",
+    "type": "account"
+  },
+  "item_types": [
+    {
+      "id": "HHRJpIL7TQev85FmHTCh_w",
+      "type": "item_type"
+    },
+    {
+      "id": "1121585",
+      "type": "item_type"
+    },
+    {
+      "id": "1121586",
+      "type": "item_type"
+    },
+    {
+      "id": "1121583",
+      "type": "item_type"
+    },
+    {
+      "id": "2285071",
+      "type": "item_type"
+    },
+    {
+      "id": "2278429",
+      "type": "item_type"
+    },
+    {
+      "id": "Z2lSTcZFSwesF5e4oAyu4Q",
+      "type": "item_type"
+    },
+    {
+      "id": "1121587",
+      "type": "item_type"
+    },
+    {
+      "id": "1121584",
+      "type": "item_type"
+    }
+  ],
+  "meta": {
+    "created_at": "2023-08-08T14:11:35.482Z",
+    "improved_timezone_management": true,
+    "improved_hex_management": true,
+    "improved_gql_multilocale_fields": true,
+    "improved_gql_visibility_control": true,
+    "improved_boolean_fields": true,
+    "draft_mode_default": false,
+    "improved_validation_at_publishing": false,
+    "improved_exposure_of_inline_blocks_in_cda": true,
+    "improved_items_listing": false,
+    "milliseconds_in_datetime": false,
+    "non_localized_focal_points": false,
+    "custom_upload_storage_settings": false,
+    "allow_custom_theme": true
+  }
+}

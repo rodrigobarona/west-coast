@@ -1,0 +1,438 @@
+[
+  {
+    "id": "HHRJpIL7TQev85FmHTCh_w",
+    "type": "item_type",
+    "name": "Audio block",
+    "singleton": false,
+    "sortable": false,
+    "api_key": "audio_block",
+    "ordering_direction": null,
+    "ordering_meta": null,
+    "tree": false,
+    "modular_block": true,
+    "draft_mode_active": false,
+    "draft_saving_active": false,
+    "all_locales_required": true,
+    "collection_appearance": "table",
+    "has_singleton_item": false,
+    "hint": null,
+    "inverse_relationships_enabled": false,
+    "fields": [
+      {
+        "id": "d6kUzniVQDq7UhcDgGUK_Q",
+        "type": "field"
+      }
+    ],
+    "fieldsets": [],
+    "singleton_item": null,
+    "ordering_field": null,
+    "presentation_title_field": null,
+    "presentation_image_field": null,
+    "title_field": null,
+    "image_preview_field": null,
+    "excerpt_field": null,
+    "workflow": null,
+    "meta": {
+      "has_singleton_item": false
+    }
+  },
+  {
+    "id": "1121585",
+    "type": "item_type",
+    "name": "Blog",
+    "singleton": true,
+    "sortable": false,
+    "api_key": "blog",
+    "ordering_direction": null,
+    "ordering_meta": null,
+    "tree": false,
+    "modular_block": false,
+    "draft_mode_active": false,
+    "draft_saving_active": false,
+    "all_locales_required": true,
+    "collection_appearance": "table",
+    "has_singleton_item": true,
+    "hint": null,
+    "inverse_relationships_enabled": false,
+    "fields": [
+      {
+        "id": "5449757",
+        "type": "field"
+      }
+    ],
+    "fieldsets": [],
+    "singleton_item": {
+      "id": "54830181",
+      "type": "item"
+    },
+    "ordering_field": null,
+    "presentation_title_field": null,
+    "presentation_image_field": null,
+    "title_field": null,
+    "image_preview_field": null,
+    "excerpt_field": null,
+    "workflow": null,
+    "meta": {
+      "has_singleton_item": true
+    }
+  },
+  {
+    "id": "1121586",
+    "type": "item_type",
+    "name": "Category",
+    "singleton": false,
+    "sortable": false,
+    "api_key": "category",
+    "ordering_direction": null,
+    "ordering_meta": null,
+    "tree": false,
+    "modular_block": false,
+    "draft_mode_active": false,
+    "draft_saving_active": false,
+    "all_locales_required": true,
+    "collection_appearance": "compact",
+    "has_singleton_item": false,
+    "hint": null,
+    "inverse_relationships_enabled": false,
+    "fields": [
+      {
+        "id": "5449755",
+        "type": "field"
+      },
+      {
+        "id": "5449761",
+        "type": "field"
+      }
+    ],
+    "fieldsets": [],
+    "singleton_item": null,
+    "ordering_field": null,
+    "presentation_title_field": {
+      "id": "5449755",
+      "type": "field"
+    },
+    "presentation_image_field": null,
+    "title_field": {
+      "id": "5449755",
+      "type": "field"
+    },
+    "image_preview_field": null,
+    "excerpt_field": null,
+    "workflow": null,
+    "meta": {
+      "has_singleton_item": false
+    }
+  },
+  {
+    "id": "1121583",
+    "type": "item_type",
+    "name": "Image block",
+    "singleton": false,
+    "sortable": false,
+    "api_key": "image_block",
+    "ordering_direction": null,
+    "ordering_meta": null,
+    "tree": false,
+    "modular_block": true,
+    "draft_mode_active": false,
+    "draft_saving_active": false,
+    "all_locales_required": true,
+    "collection_appearance": "table",
+    "has_singleton_item": false,
+    "hint": null,
+    "inverse_relationships_enabled": false,
+    "fields": [
+      {
+        "id": "5449759",
+        "type": "field"
+      }
+    ],
+    "fieldsets": [],
+    "singleton_item": null,
+    "ordering_field": null,
+    "presentation_title_field": null,
+    "presentation_image_field": null,
+    "title_field": null,
+    "image_preview_field": null,
+    "excerpt_field": null,
+    "workflow": null,
+    "meta": {
+      "has_singleton_item": false
+    }
+  },
+  {
+    "id": "2285071",
+    "type": "item_type",
+    "name": "Gallery block",
+    "singleton": false,
+    "sortable": false,
+    "api_key": "gallery_block",
+    "ordering_direction": null,
+    "ordering_meta": null,
+    "tree": false,
+    "modular_block": true,
+    "draft_mode_active": false,
+    "draft_saving_active": false,
+    "all_locales_required": true,
+    "collection_appearance": "table",
+    "has_singleton_item": false,
+    "hint": null,
+    "inverse_relationships_enabled": false,
+    "fields": [
+      {
+        "id": "11937282",
+        "type": "field"
+      }
+    ],
+    "fieldsets": [],
+    "singleton_item": null,
+    "ordering_field": null,
+    "presentation_title_field": null,
+    "presentation_image_field": null,
+    "title_field": null,
+    "image_preview_field": null,
+    "excerpt_field": null,
+    "workflow": null,
+    "meta": {
+      "has_singleton_item": false
+    }
+  },
+  {
+    "id": "2278429",
+    "type": "item_type",
+    "name": "Video block",
+    "singleton": false,
+    "sortable": false,
+    "api_key": "video_block",
+    "ordering_direction": null,
+    "ordering_meta": null,
+    "tree": false,
+    "modular_block": true,
+    "draft_mode_active": false,
+    "draft_saving_active": false,
+    "all_locales_required": true,
+    "collection_appearance": "table",
+    "has_singleton_item": false,
+    "hint": null,
+    "inverse_relationships_enabled": false,
+    "fields": [
+      {
+        "id": "11906504",
+        "type": "field"
+      },
+      {
+        "id": "XeO_FHrHTgO3QUsXg8q6qw",
+        "type": "field"
+      },
+      {
+        "id": "Ers5Mk3JT4CMRzbBMAq1hA",
+        "type": "field"
+      },
+      {
+        "id": "I1Pw3J6hTdK51Ekcb9DD6g",
+        "type": "field"
+      }
+    ],
+    "fieldsets": [],
+    "singleton_item": null,
+    "ordering_field": null,
+    "presentation_title_field": null,
+    "presentation_image_field": null,
+    "title_field": null,
+    "image_preview_field": null,
+    "excerpt_field": null,
+    "workflow": null,
+    "meta": {
+      "has_singleton_item": false
+    }
+  },
+  {
+    "id": "Z2lSTcZFSwesF5e4oAyu4Q",
+    "type": "item_type",
+    "name": "Cloudinary Video",
+    "singleton": false,
+    "sortable": false,
+    "api_key": "cloudinary_video",
+    "ordering_direction": null,
+    "ordering_meta": null,
+    "tree": false,
+    "modular_block": true,
+    "draft_mode_active": false,
+    "draft_saving_active": false,
+    "all_locales_required": false,
+    "collection_appearance": "table",
+    "has_singleton_item": false,
+    "hint": null,
+    "inverse_relationships_enabled": false,
+    "fields": [
+      {
+        "id": "IYR6JwcXQH6cy3_EBgxdLA",
+        "type": "field"
+      }
+    ],
+    "fieldsets": [],
+    "singleton_item": null,
+    "ordering_field": null,
+    "presentation_title_field": null,
+    "presentation_image_field": null,
+    "title_field": null,
+    "image_preview_field": null,
+    "excerpt_field": null,
+    "workflow": null,
+    "meta": {
+      "has_singleton_item": false
+    }
+  },
+  {
+    "id": "1121587",
+    "type": "item_type",
+    "name": "Author",
+    "singleton": false,
+    "sortable": false,
+    "api_key": "author",
+    "ordering_direction": null,
+    "ordering_meta": null,
+    "tree": false,
+    "modular_block": false,
+    "draft_mode_active": false,
+    "draft_saving_active": false,
+    "all_locales_required": true,
+    "collection_appearance": "table",
+    "has_singleton_item": false,
+    "hint": null,
+    "inverse_relationships_enabled": false,
+    "fields": [
+      {
+        "id": "5449747",
+        "type": "field"
+      },
+      {
+        "id": "5449748",
+        "type": "field"
+      },
+      {
+        "id": "CM-3SeFnQEy6I-o4KRQQTw",
+        "type": "field"
+      },
+      {
+        "id": "eNaVUKubTE6BWCU2qNOxLg",
+        "type": "field"
+      }
+    ],
+    "fieldsets": [],
+    "singleton_item": null,
+    "ordering_field": null,
+    "presentation_title_field": {
+      "id": "5449747",
+      "type": "field"
+    },
+    "presentation_image_field": null,
+    "title_field": {
+      "id": "5449747",
+      "type": "field"
+    },
+    "image_preview_field": null,
+    "excerpt_field": null,
+    "workflow": null,
+    "meta": {
+      "has_singleton_item": false
+    }
+  },
+  {
+    "id": "1121584",
+    "type": "item_type",
+    "name": "Post",
+    "singleton": false,
+    "sortable": false,
+    "api_key": "post",
+    "ordering_direction": null,
+    "ordering_meta": null,
+    "tree": false,
+    "modular_block": false,
+    "draft_mode_active": true,
+    "draft_saving_active": false,
+    "all_locales_required": true,
+    "collection_appearance": "table",
+    "has_singleton_item": false,
+    "hint": null,
+    "inverse_relationships_enabled": false,
+    "fields": [
+      {
+        "id": "5449756",
+        "type": "field"
+      },
+      {
+        "id": "12943737",
+        "type": "field"
+      },
+      {
+        "id": "5449749",
+        "type": "field"
+      },
+      {
+        "id": "5449753",
+        "type": "field"
+      },
+      {
+        "id": "5449752",
+        "type": "field"
+      },
+      {
+        "id": "5449750",
+        "type": "field"
+      },
+      {
+        "id": "5449758",
+        "type": "field"
+      },
+      {
+        "id": "5449760",
+        "type": "field"
+      },
+      {
+        "id": "5449754",
+        "type": "field"
+      }
+    ],
+    "fieldsets": [
+      {
+        "id": "CHRv4XKEQfSmniAXkX4DTA",
+        "type": "fieldset"
+      },
+      {
+        "id": "263575",
+        "type": "fieldset"
+      },
+      {
+        "id": "263574",
+        "type": "fieldset"
+      }
+    ],
+    "singleton_item": null,
+    "ordering_field": null,
+    "presentation_title_field": {
+      "id": "5449749",
+      "type": "field"
+    },
+    "presentation_image_field": {
+      "id": "12943737",
+      "type": "field"
+    },
+    "title_field": {
+      "id": "5449749",
+      "type": "field"
+    },
+    "image_preview_field": {
+      "id": "12943737",
+      "type": "field"
+    },
+    "excerpt_field": {
+      "id": "5449758",
+      "type": "field"
+    },
+    "workflow": null,
+    "meta": {
+      "has_singleton_item": false
+    }
+  }
+]

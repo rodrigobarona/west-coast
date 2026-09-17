@@ -1,0 +1,854 @@
+[
+  {
+    "id": "d6kUzniVQDq7UhcDgGUK_Q",
+    "type": "field",
+    "label": "Audio",
+    "field_type": "file",
+    "api_key": "audio",
+    "hint": null,
+    "localized": false,
+    "validators": {
+      "required": {},
+      "extension": {
+        "extensions": [
+          "mp3"
+        ]
+      }
+    },
+    "position": 1,
+    "appearance": {
+      "addons": [],
+      "editor": "file",
+      "parameters": {}
+    },
+    "default_value": null,
+    "deep_filtering_enabled": false,
+    "content_link_enabled": true,
+    "item_type": {
+      "id": "HHRJpIL7TQev85FmHTCh_w",
+      "type": "item_type"
+    },
+    "fieldset": null
+  },
+  {
+    "id": "5449757",
+    "type": "field",
+    "label": "SEO for Blog Homepage",
+    "field_type": "seo",
+    "api_key": "seo",
+    "hint": null,
+    "localized": true,
+    "validators": {
+      "title_length": {
+        "max": 160
+      },
+      "description_length": {
+        "max": 320
+      }
+    },
+    "position": 1,
+    "appearance": {
+      "addons": [],
+      "editor": "seo",
+      "parameters": {
+        "fields": [
+          "title",
+          "description",
+          "image",
+          "twitter_card"
+        ],
+        "previews": [
+          "google",
+          "twitter",
+          "facebook"
+        ]
+      }
+    },
+    "default_value": {
+      "pt": null,
+      "es": null,
+      "en": null
+    },
+    "deep_filtering_enabled": false,
+    "content_link_enabled": true,
+    "item_type": {
+      "id": "1121585",
+      "type": "item_type"
+    },
+    "fieldset": null
+  },
+  {
+    "id": "5449755",
+    "type": "field",
+    "label": "Name",
+    "field_type": "string",
+    "api_key": "name",
+    "hint": null,
+    "localized": true,
+    "validators": {
+      "required": {},
+      "unique": {}
+    },
+    "position": 1,
+    "appearance": {
+      "addons": [],
+      "editor": "single_line",
+      "parameters": {
+        "heading": false,
+        "placeholder": null
+      }
+    },
+    "default_value": {
+      "pt": "",
+      "es": null,
+      "en": null
+    },
+    "deep_filtering_enabled": false,
+    "content_link_enabled": true,
+    "item_type": {
+      "id": "1121586",
+      "type": "item_type"
+    },
+    "fieldset": null
+  },
+  {
+    "id": "5449761",
+    "type": "field",
+    "label": "Slug",
+    "field_type": "slug",
+    "api_key": "slug",
+    "hint": null,
+    "localized": false,
+    "validators": {
+      "unique": {},
+      "slug_format": {
+        "predefined_pattern": "webpage_slug"
+      },
+      "slug_title_field": {
+        "title_field_id": "5449755"
+      }
+    },
+    "position": 2,
+    "appearance": {
+      "addons": [],
+      "editor": "slug",
+      "parameters": {
+        "url_prefix": "https://west-coast.pt",
+        "placeholder": null
+      }
+    },
+    "default_value": null,
+    "deep_filtering_enabled": false,
+    "content_link_enabled": true,
+    "item_type": {
+      "id": "1121586",
+      "type": "item_type"
+    },
+    "fieldset": null
+  },
+  {
+    "id": "5449759",
+    "type": "field",
+    "label": "Image",
+    "field_type": "file",
+    "api_key": "image",
+    "hint": null,
+    "localized": false,
+    "validators": {
+      "required": {},
+      "extension": {
+        "extensions": [],
+        "predefined_list": "transformable_image"
+      }
+    },
+    "position": 1,
+    "appearance": {
+      "addons": [],
+      "editor": "file",
+      "parameters": {}
+    },
+    "default_value": null,
+    "deep_filtering_enabled": false,
+    "content_link_enabled": true,
+    "item_type": {
+      "id": "1121583",
+      "type": "item_type"
+    },
+    "fieldset": null
+  },
+  {
+    "id": "11937282",
+    "type": "field",
+    "label": "Gallery",
+    "field_type": "gallery",
+    "api_key": "gallery",
+    "hint": null,
+    "localized": false,
+    "validators": {
+      "size": {
+        "min": 2
+      },
+      "extension": {
+        "extensions": [],
+        "predefined_list": "transformable_image"
+      }
+    },
+    "position": 1,
+    "appearance": {
+      "addons": [],
+      "editor": "gallery",
+      "parameters": {}
+    },
+    "default_value": null,
+    "deep_filtering_enabled": false,
+    "content_link_enabled": true,
+    "item_type": {
+      "id": "2285071",
+      "type": "item_type"
+    },
+    "fieldset": null
+  },
+  {
+    "id": "I1Pw3J6hTdK51Ekcb9DD6g",
+    "type": "field",
+    "label": "End video",
+    "field_type": "integer",
+    "api_key": "end_video",
+    "hint": "Express in seconds.",
+    "localized": false,
+    "validators": {},
+    "position": 4,
+    "appearance": {
+      "addons": [],
+      "editor": "integer",
+      "parameters": {
+        "placeholder": null
+      }
+    },
+    "default_value": null,
+    "deep_filtering_enabled": false,
+    "content_link_enabled": true,
+    "item_type": {
+      "id": "2278429",
+      "type": "item_type"
+    },
+    "fieldset": null
+  },
+  {
+    "id": "Ers5Mk3JT4CMRzbBMAq1hA",
+    "type": "field",
+    "label": "Start video",
+    "field_type": "integer",
+    "api_key": "start_video",
+    "hint": "Express in seconds.",
+    "localized": false,
+    "validators": {},
+    "position": 3,
+    "appearance": {
+      "addons": [],
+      "editor": "integer",
+      "parameters": {
+        "placeholder": null
+      }
+    },
+    "default_value": null,
+    "deep_filtering_enabled": false,
+    "content_link_enabled": true,
+    "item_type": {
+      "id": "2278429",
+      "type": "item_type"
+    },
+    "fieldset": null
+  },
+  {
+    "id": "XeO_FHrHTgO3QUsXg8q6qw",
+    "type": "field",
+    "label": "Trim Video",
+    "field_type": "boolean",
+    "api_key": "timeline",
+    "hint": "Enable this option to define custom start and end times for your video playback.",
+    "localized": false,
+    "validators": {},
+    "position": 2,
+    "appearance": {
+      "addons": [
+        {
+          "id": "eEpNhANnQb2vcBTiatAEHA",
+          "parameters": {
+            "invert": false,
+            "targetFieldsApiKey": [
+              "start_video",
+              "end_video"
+            ]
+          },
+          "field_extension": "conditionalFields"
+        }
+      ],
+      "editor": "boolean",
+      "parameters": {}
+    },
+    "default_value": false,
+    "deep_filtering_enabled": false,
+    "content_link_enabled": true,
+    "item_type": {
+      "id": "2278429",
+      "type": "item_type"
+    },
+    "fieldset": null
+  },
+  {
+    "id": "11906504",
+    "type": "field",
+    "label": "Video",
+    "field_type": "file",
+    "api_key": "video",
+    "hint": null,
+    "localized": false,
+    "validators": {
+      "required": {},
+      "extension": {
+        "extensions": [],
+        "predefined_list": "video"
+      }
+    },
+    "position": 1,
+    "appearance": {
+      "addons": [],
+      "editor": "file",
+      "parameters": {}
+    },
+    "default_value": null,
+    "deep_filtering_enabled": false,
+    "content_link_enabled": true,
+    "item_type": {
+      "id": "2278429",
+      "type": "item_type"
+    },
+    "fieldset": null
+  },
+  {
+    "id": "IYR6JwcXQH6cy3_EBgxdLA",
+    "type": "field",
+    "label": "Video",
+    "field_type": "json",
+    "api_key": "video",
+    "hint": null,
+    "localized": false,
+    "validators": {
+      "required": {}
+    },
+    "position": 1,
+    "appearance": {
+      "addons": [],
+      "editor": "X7-VLMDrQl6NRJ9R0s9C3w",
+      "parameters": {
+        "useAsCloudinaryPicker": null
+      },
+      "field_extension": "cloudinaryPicker"
+    },
+    "default_value": null,
+    "deep_filtering_enabled": false,
+    "content_link_enabled": true,
+    "item_type": {
+      "id": "Z2lSTcZFSwesF5e4oAyu4Q",
+      "type": "item_type"
+    },
+    "fieldset": null
+  },
+  {
+    "id": "eNaVUKubTE6BWCU2qNOxLg",
+    "type": "field",
+    "label": "biography",
+    "field_type": "text",
+    "api_key": "bio",
+    "hint": null,
+    "localized": true,
+    "validators": {},
+    "position": 4,
+    "appearance": {
+      "addons": [],
+      "editor": "markdown",
+      "parameters": {
+        "toolbar": [
+          "heading",
+          "bold",
+          "italic",
+          "strikethrough",
+          "code",
+          "unordered_list",
+          "ordered_list",
+          "quote",
+          "link",
+          "image",
+          "fullscreen"
+        ]
+      }
+    },
+    "default_value": {
+      "pt": "",
+      "es": "",
+      "en": ""
+    },
+    "deep_filtering_enabled": false,
+    "content_link_enabled": true,
+    "item_type": {
+      "id": "1121587",
+      "type": "item_type"
+    },
+    "fieldset": null
+  },
+  {
+    "id": "5449747",
+    "type": "field",
+    "label": "Name",
+    "field_type": "string",
+    "api_key": "name",
+    "hint": null,
+    "localized": false,
+    "validators": {},
+    "position": 1,
+    "appearance": {
+      "addons": [],
+      "editor": "single_line",
+      "parameters": {
+        "heading": false,
+        "placeholder": null
+      }
+    },
+    "default_value": null,
+    "deep_filtering_enabled": false,
+    "content_link_enabled": true,
+    "item_type": {
+      "id": "1121587",
+      "type": "item_type"
+    },
+    "fieldset": null
+  },
+  {
+    "id": "5449748",
+    "type": "field",
+    "label": "Picture",
+    "field_type": "file",
+    "api_key": "picture",
+    "hint": null,
+    "localized": false,
+    "validators": {},
+    "position": 2,
+    "appearance": {
+      "addons": [],
+      "editor": "file",
+      "parameters": {}
+    },
+    "default_value": null,
+    "deep_filtering_enabled": false,
+    "content_link_enabled": true,
+    "item_type": {
+      "id": "1121587",
+      "type": "item_type"
+    },
+    "fieldset": null
+  },
+  {
+    "id": "CM-3SeFnQEy6I-o4KRQQTw",
+    "type": "field",
+    "label": "slug",
+    "field_type": "slug",
+    "api_key": "slug",
+    "hint": null,
+    "localized": false,
+    "validators": {
+      "slug_title_field": {
+        "title_field_id": "5449747"
+      },
+      "slug_format": {
+        "predefined_pattern": "webpage_slug"
+      },
+      "required": {},
+      "unique": {}
+    },
+    "position": 3,
+    "appearance": {
+      "addons": [],
+      "editor": "slug",
+      "parameters": {
+        "url_prefix": null,
+        "placeholder": null
+      }
+    },
+    "default_value": null,
+    "deep_filtering_enabled": false,
+    "content_link_enabled": true,
+    "item_type": {
+      "id": "1121587",
+      "type": "item_type"
+    },
+    "fieldset": null
+  },
+  {
+    "id": "5449753",
+    "type": "field",
+    "label": "Author",
+    "field_type": "link",
+    "api_key": "author",
+    "hint": null,
+    "localized": false,
+    "validators": {
+      "item_item_type": {
+        "on_publish_with_unpublished_references_strategy": "fail",
+        "on_reference_unpublish_strategy": "delete_references",
+        "on_reference_delete_strategy": "delete_references",
+        "item_types": [
+          "1121587"
+        ]
+      },
+      "required": {}
+    },
+    "position": 1,
+    "appearance": {
+      "addons": [],
+      "editor": "link_select",
+      "parameters": {}
+    },
+    "default_value": null,
+    "deep_filtering_enabled": false,
+    "content_link_enabled": true,
+    "item_type": {
+      "id": "1121584",
+      "type": "item_type"
+    },
+    "fieldset": {
+      "id": "CHRv4XKEQfSmniAXkX4DTA",
+      "type": "fieldset"
+    }
+  },
+  {
+    "id": "5449756",
+    "type": "field",
+    "label": "Category",
+    "field_type": "link",
+    "api_key": "category",
+    "hint": null,
+    "localized": false,
+    "validators": {
+      "item_item_type": {
+        "on_publish_with_unpublished_references_strategy": "fail",
+        "on_reference_unpublish_strategy": "delete_references",
+        "on_reference_delete_strategy": "delete_references",
+        "item_types": [
+          "1121586"
+        ]
+      }
+    },
+    "position": 0,
+    "appearance": {
+      "addons": [],
+      "editor": "link_select",
+      "parameters": {}
+    },
+    "default_value": null,
+    "deep_filtering_enabled": false,
+    "content_link_enabled": true,
+    "item_type": {
+      "id": "1121584",
+      "type": "item_type"
+    },
+    "fieldset": {
+      "id": "263574",
+      "type": "fieldset"
+    }
+  },
+  {
+    "id": "5449758",
+    "type": "field",
+    "label": "Content",
+    "field_type": "structured_text",
+    "api_key": "content",
+    "hint": null,
+    "localized": true,
+    "validators": {
+      "structured_text_blocks": {
+        "item_types": [
+          "1121583",
+          "2278429",
+          "2285071",
+          "HHRJpIL7TQev85FmHTCh_w",
+          "Z2lSTcZFSwesF5e4oAyu4Q"
+        ]
+      },
+      "structured_text_inline_blocks": {
+        "item_types": []
+      },
+      "structured_text_links": {
+        "on_publish_with_unpublished_references_strategy": "fail",
+        "on_reference_unpublish_strategy": "delete_references",
+        "on_reference_delete_strategy": "delete_references",
+        "item_types": []
+      }
+    },
+    "position": 2,
+    "appearance": {
+      "addons": [],
+      "editor": "structured_text",
+      "parameters": {
+        "marks": [
+          "strong",
+          "code",
+          "emphasis",
+          "underline",
+          "strikethrough",
+          "highlight"
+        ],
+        "nodes": [
+          "blockquote",
+          "code",
+          "heading",
+          "link",
+          "list",
+          "inlineItem",
+          "itemLink"
+        ],
+        "heading_levels": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "blocks_start_collapsed": false,
+        "show_links_meta_editor": false,
+        "show_links_target_blank": true
+      }
+    },
+    "default_value": {
+      "pt": null,
+      "es": null,
+      "en": null
+    },
+    "deep_filtering_enabled": false,
+    "content_link_enabled": true,
+    "item_type": {
+      "id": "1121584",
+      "type": "item_type"
+    },
+    "fieldset": {
+      "id": "CHRv4XKEQfSmniAXkX4DTA",
+      "type": "fieldset"
+    }
+  },
+  {
+    "id": "12943737",
+    "type": "field",
+    "label": "Cover Image",
+    "field_type": "file",
+    "api_key": "cover_image",
+    "hint": null,
+    "localized": false,
+    "validators": {
+      "required": {},
+      "extension": {
+        "extensions": [],
+        "predefined_list": "transformable_image"
+      }
+    },
+    "position": 0,
+    "appearance": {
+      "addons": [],
+      "editor": "file",
+      "parameters": {}
+    },
+    "default_value": null,
+    "deep_filtering_enabled": false,
+    "content_link_enabled": true,
+    "item_type": {
+      "id": "1121584",
+      "type": "item_type"
+    },
+    "fieldset": {
+      "id": "263575",
+      "type": "fieldset"
+    }
+  },
+  {
+    "id": "5449752",
+    "type": "field",
+    "label": "Date",
+    "field_type": "date",
+    "api_key": "date",
+    "hint": null,
+    "localized": false,
+    "validators": {
+      "required": {}
+    },
+    "position": 1,
+    "appearance": {
+      "addons": [],
+      "editor": "date_picker",
+      "parameters": {}
+    },
+    "default_value": null,
+    "deep_filtering_enabled": false,
+    "content_link_enabled": true,
+    "item_type": {
+      "id": "1121584",
+      "type": "item_type"
+    },
+    "fieldset": {
+      "id": "263574",
+      "type": "fieldset"
+    }
+  },
+  {
+    "id": "5449750",
+    "type": "field",
+    "label": "Excerpt",
+    "field_type": "string",
+    "api_key": "excerpt",
+    "hint": null,
+    "localized": true,
+    "validators": {},
+    "position": 1,
+    "appearance": {
+      "addons": [],
+      "editor": "single_line",
+      "parameters": {
+        "heading": false,
+        "placeholder": null
+      }
+    },
+    "default_value": {
+      "pt": null,
+      "es": null,
+      "en": null
+    },
+    "deep_filtering_enabled": false,
+    "content_link_enabled": true,
+    "item_type": {
+      "id": "1121584",
+      "type": "item_type"
+    },
+    "fieldset": {
+      "id": "263575",
+      "type": "fieldset"
+    }
+  },
+  {
+    "id": "5449754",
+    "type": "field",
+    "label": "SEO Settings",
+    "field_type": "seo",
+    "api_key": "seo_settings",
+    "hint": null,
+    "localized": false,
+    "validators": {
+      "title_length": {
+        "max": 160
+      },
+      "description_length": {
+        "max": 320
+      }
+    },
+    "position": 3,
+    "appearance": {
+      "addons": [],
+      "editor": "seo",
+      "parameters": {
+        "fields": [
+          "title",
+          "description",
+          "image",
+          "twitter_card"
+        ],
+        "previews": [
+          "google",
+          "twitter",
+          "facebook"
+        ]
+      }
+    },
+    "default_value": null,
+    "deep_filtering_enabled": false,
+    "content_link_enabled": true,
+    "item_type": {
+      "id": "1121584",
+      "type": "item_type"
+    },
+    "fieldset": {
+      "id": "263574",
+      "type": "fieldset"
+    }
+  },
+  {
+    "id": "5449760",
+    "type": "field",
+    "label": "Slug",
+    "field_type": "slug",
+    "api_key": "slug",
+    "hint": null,
+    "localized": false,
+    "validators": {
+      "slug_title_field": {
+        "title_field_id": "5449749"
+      },
+      "slug_format": {
+        "predefined_pattern": "webpage_slug"
+      },
+      "required": {},
+      "unique": {}
+    },
+    "position": 2,
+    "appearance": {
+      "addons": [],
+      "editor": "slug",
+      "parameters": {
+        "url_prefix": "https://west-coast.pt/",
+        "placeholder": null
+      }
+    },
+    "default_value": null,
+    "deep_filtering_enabled": false,
+    "content_link_enabled": true,
+    "item_type": {
+      "id": "1121584",
+      "type": "item_type"
+    },
+    "fieldset": {
+      "id": "263574",
+      "type": "fieldset"
+    }
+  },
+  {
+    "id": "5449749",
+    "type": "field",
+    "label": "Title",
+    "field_type": "string",
+    "api_key": "title",
+    "hint": null,
+    "localized": true,
+    "validators": {},
+    "position": 0,
+    "appearance": {
+      "addons": [],
+      "editor": "single_line",
+      "parameters": {
+        "heading": true,
+        "placeholder": null
+      }
+    },
+    "default_value": {
+      "pt": null,
+      "es": null,
+      "en": null
+    },
+    "deep_filtering_enabled": false,
+    "content_link_enabled": true,
+    "item_type": {
+      "id": "1121584",
+      "type": "item_type"
+    },
+    "fieldset": {
+      "id": "CHRv4XKEQfSmniAXkX4DTA",
+      "type": "fieldset"
+    }
+  }
+]

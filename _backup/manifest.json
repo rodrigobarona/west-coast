@@ -10,73 +10,7 @@
   "uploadCount": 2536,
   "downloadedCount": 1449,
   "skippedExistingCount": 1074,
-  "failedDownloads": [
-    {
-      "id": "ZB0hXJs2Q0ixSnrl9UDTag",
-      "fileName": "ZB0hXJs2Q0ixSnrl9UDTag-1719722841-that-s-a-wrap-on-weeks-one-and-two-of-seal-beach-junior-guards-but-summer-is-just-getting-started-a-huge-congratulations-to-all-the-junior-guards-that-completed-their-first-group-pier-swim-yesterday-as-a-reminder-we-will-not-have-junior.mp4",
-      "error": "ENAMETOOLONG: name too long, open '/Users/rodrigo.barona/Documents/GitHub/west-coast/_backup/media/ZB0hXJs2Q0ixSnrl9UDTag-1719722841-that-s-a-wrap-on-weeks-one-and-two-of-seal-beach-junior-guards-but-summer-is-just-getting-started-a-huge-congratulations-to-all-the-junior-guards-that-completed-their-first-group-pier-swim-yesterday-as-a-reminder-we-will-not-have-junior.mp4'"
-    },
-    {
-      "id": "OVlZ6XZUSnq00rdyRGlaZA",
-      "fileName": "OVlZ6XZUSnq00rdyRGlaZA-1718051132-img_2703.jpeg",
-      "error": "HTTP 503 for OVlZ6XZUSnq00rdyRGlaZA-1718051132-img_2703.jpeg"
-    },
-    {
-      "id": "EnSzON69Snu4NaPxvCfuhg",
-      "fileName": "EnSzON69Snu4NaPxvCfuhg-1713763181-img_6211.mov",
-      "error": "terminated"
-    },
-    {
-      "id": "StzBHvcnQw-kmiTWNCBD8g",
-      "fileName": "StzBHvcnQw-kmiTWNCBD8g-1713454380-img_6271.mov",
-      "error": "terminated"
-    },
-    {
-      "id": "ITNTSUUDTDikCEIvdJHKpA",
-      "fileName": "ITNTSUUDTDikCEIvdJHKpA-1713454355-img_6228.jpeg",
-      "error": "fetch failed"
-    },
-    {
-      "id": "U6TH0wdIRNy7a0AJMQeUQQ",
-      "fileName": "U6TH0wdIRNy7a0AJMQeUQQ-1713454300-img_6217.mov",
-      "error": "terminated"
-    },
-    {
-      "id": "Kp0pBDCMRpea81CFQJvibQ",
-      "fileName": "Kp0pBDCMRpea81CFQJvibQ-1713393126-img_6167.jpeg",
-      "error": "terminated"
-    },
-    {
-      "id": "UQ5ai_tQQcKwIErh8_W8Ug",
-      "fileName": "UQ5ai_tQQcKwIErh8_W8Ug-1713393107-img_6148.jpeg",
-      "error": "terminated"
-    },
-    {
-      "id": "Qu0B9KSZQzmjj0wfHqf9bA",
-      "fileName": "Qu0B9KSZQzmjj0wfHqf9bA-1713393092-img_6122.jpeg",
-      "error": "terminated"
-    },
-    {
-      "id": "67288595",
-      "fileName": "67288595-1692647027-img_8801.mov",
-      "error": "terminated"
-    },
-    {
-      "id": "67288579",
-      "fileName": "67288579-1692646245-img_8676.mov",
-      "error": "terminated"
-    },
-    {
-      "id": "67288573",
-      "fileName": "67288573-1692645919-img_8674.jpeg",
-      "error": "terminated"
-    },
-    {
-      "id": "67288571",
-      "fileName": "67288571-1692645628-img_8836.jpeg",
-      "error": "fetch failed"
-    }
-  ],
+  "failedDownloads": [],
   "markdownCount": 78,
   "postCount": 26,
   "largeFiles": [

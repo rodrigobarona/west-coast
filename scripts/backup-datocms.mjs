@@ -111,7 +111,16 @@ function mediaFileName(upload) {
   const fallback = `${upload.basename || "file"}${
     upload.format ? `.${upload.format}` : ""
   }`;
-  return `${upload.id}-${safeFileName(fromPath || fallback)}`;
+  const original = safeFileName(fromPath || fallback);
+  const prefix = `${upload.id}-`;
+  const maxName = 200;
+  if (prefix.length + original.length <= maxName) {
+    return prefix + original;
+  }
+  const extMatch = original.match(/(\.[A-Za-z0-9]+)$/);
+  const ext = extMatch ? extMatch[1] : "";
+  const stemBudget = Math.max(1, maxName - prefix.length - ext.length);
+  return `${prefix}${original.slice(0, stemBudget)}${ext}`;
 }
 
 function mediaRelPath(upload) {
@@ -398,7 +407,7 @@ function findPostModel(itemTypes, fieldsByTypeId) {
   });
 }
 
-async function downloadUpload(site, upload) {
+async function downloadUpload(site, upload, attempts = 4) {
   const fileName = mediaFileName(upload);
   const dest = join(MEDIA_DIR, fileName);
   const expectedSize = Number(upload.size) || 0;
@@ -410,21 +419,88 @@ async function downloadUpload(site, upload) {
     }
   }
 
-  const url = originalUploadUrl(site, upload);
-  const response = await fetch(url, {
-    headers: { Accept: "application/octet-stream,*/*" },
-  });
-  if (!response.ok) {
-    throw new Error(`HTTP ${response.status} for ${fileName}`);
+  let lastError = new Error(`Failed to download ${fileName}`);
+  for (let attempt = 1; attempt <= attempts; attempt += 1) {
+    try {
+      const url = originalUploadUrl(site, upload);
+      const response = await fetch(url, {
+        headers: { Accept: "application/octet-stream,*/*" },
+      });
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status} for ${fileName}`);
+      }
+      const buffer = Buffer.from(await response.arrayBuffer());
+      writeFileSync(dest, buffer);
+      if (expectedSize && buffer.length !== expectedSize) {
+        console.warn(
+          `  warning: ${fileName} size ${buffer.length} != original ${expectedSize}`,
+        );
+      }
+      return { fileName, bytes: buffer.length, skipped: false };
+    } catch (error) {
+      lastError = error instanceof Error ? error : new Error(String(error));
+      if (attempt < attempts) {
+        const waitMs = 1500 * attempt;
+        console.warn(
+          `  retry ${attempt}/${attempts} ${fileName} — ${lastError.message}`,
+        );
+        await new Promise((resolveDelay) => setTimeout(resolveDelay, waitMs));
+      }
+    }
   }
-  const buffer = Buffer.from(await response.arrayBuffer());
-  writeFileSync(dest, buffer);
-  if (expectedSize && buffer.length !== expectedSize) {
-    console.warn(
-      `  warning: ${fileName} size ${buffer.length} != original ${expectedSize}`,
-    );
+  throw lastError;
+}
+
+async function retryFailedFromManifest(site) {
+  const manifestPath = join(BACKUP_DIR, "manifest.json");
+  const uploadsPath = join(JSON_DIR, "uploads.json");
+  const manifest = JSON.parse(readFileSync(manifestPath, "utf8"));
+  const uploads = JSON.parse(readFileSync(uploadsPath, "utf8"));
+  const uploadsById = new Map(uploads.map((upload) => [upload.id, upload]));
+  const failed = manifest.failedDownloads || [];
+
+  console.log(`Retrying ${failed.length} failed media downloads...`);
+  const results = [];
+
+  for (const item of failed) {
+    const upload = uploadsById.get(item.id);
+    if (!upload) {
+      console.error(`  error: ${item.id} not found in uploads.json`);
+      results.push({ id: item.id, fileName: item.fileName, ok: false, error: "missing upload" });
+      continue;
+    }
+    try {
+      const result = await downloadUpload(site, upload);
+      console.log(`  [${result.skipped ? "skip" : "save"}] ${result.fileName}`);
+      upload.local_path = `media/${result.fileName}`;
+      results.push({ id: upload.id, fileName: result.fileName, ok: true });
+    } catch (error) {
+      const message = error instanceof Error ? error.message : String(error);
+      console.error(`  error: ${mediaFileName(upload)} — ${message}`);
+      results.push({
+        id: upload.id,
+        fileName: mediaFileName(upload),
+        ok: false,
+        error: message,
+      });
+    }
   }
-  return { fileName, bytes: buffer.length, skipped: false };
+
+  writeJson(uploadsPath, uploads);
+  manifest.failedDownloads = results
+    .filter((result) => !result.ok)
+    .map((result) => ({
+      id: result.id,
+      fileName: result.fileName,
+      error: result.error,
+    }));
+  writeJson(manifestPath, manifest);
+
+  const recovered = results.filter((result) => result.ok).length;
+  console.log(`Retry complete: ${recovered}/${failed.length} recovered`);
+  if (results.some((result) => !result.ok)) {
+    process.exitCode = 1;
+  }
 }
 
 function writePostMarkdown({
@@ -468,6 +544,12 @@ function writePostMarkdown({
 
 async function main() {
   loadEnvFiles();
+
+  if (process.argv.includes("--retry-failed")) {
+    const site = JSON.parse(readFileSync(join(JSON_DIR, "site.json"), "utf8"));
+    await retryFailedFromManifest(site);
+    return;
+  }
 
   const apiToken =
     process.env.DATOCMS_API_TOKEN ||

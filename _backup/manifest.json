@@ -1,0 +1,244 @@
+{
+  "exportedAt": "2026-09-17T18:20:20.785Z",
+  "environment": "primary",
+  "locales": [
+    "pt",
+    "es",
+    "en"
+  ],
+  "recordCount": 30,
+  "uploadCount": 2536,
+  "downloadedCount": 1449,
+  "skippedExistingCount": 1074,
+  "failedDownloads": [
+    {
+      "id": "ZB0hXJs2Q0ixSnrl9UDTag",
+      "fileName": "ZB0hXJs2Q0ixSnrl9UDTag-1719722841-that-s-a-wrap-on-weeks-one-and-two-of-seal-beach-junior-guards-but-summer-is-just-getting-started-a-huge-congratulations-to-all-the-junior-guards-that-completed-their-first-group-pier-swim-yesterday-as-a-reminder-we-will-not-have-junior.mp4",
+      "error": "ENAMETOOLONG: name too long, open '/Users/rodrigo.barona/Documents/GitHub/west-coast/_backup/media/ZB0hXJs2Q0ixSnrl9UDTag-1719722841-that-s-a-wrap-on-weeks-one-and-two-of-seal-beach-junior-guards-but-summer-is-just-getting-started-a-huge-congratulations-to-all-the-junior-guards-that-completed-their-first-group-pier-swim-yesterday-as-a-reminder-we-will-not-have-junior.mp4'"
+    },
+    {
+      "id": "OVlZ6XZUSnq00rdyRGlaZA",
+      "fileName": "OVlZ6XZUSnq00rdyRGlaZA-1718051132-img_2703.jpeg",
+      "error": "HTTP 503 for OVlZ6XZUSnq00rdyRGlaZA-1718051132-img_2703.jpeg"
+    },
+    {
+      "id": "EnSzON69Snu4NaPxvCfuhg",
+      "fileName": "EnSzON69Snu4NaPxvCfuhg-1713763181-img_6211.mov",
+      "error": "terminated"
+    },
+    {
+      "id": "StzBHvcnQw-kmiTWNCBD8g",
+      "fileName": "StzBHvcnQw-kmiTWNCBD8g-1713454380-img_6271.mov",
+      "error": "terminated"
+    },
+    {
+      "id": "ITNTSUUDTDikCEIvdJHKpA",
+      "fileName": "ITNTSUUDTDikCEIvdJHKpA-1713454355-img_6228.jpeg",
+      "error": "fetch failed"
+    },
+    {
+      "id": "U6TH0wdIRNy7a0AJMQeUQQ",
+      "fileName": "U6TH0wdIRNy7a0AJMQeUQQ-1713454300-img_6217.mov",
+      "error": "terminated"
+    },
+    {
+      "id": "Kp0pBDCMRpea81CFQJvibQ",
+      "fileName": "Kp0pBDCMRpea81CFQJvibQ-1713393126-img_6167.jpeg",
+      "error": "terminated"
+    },
+    {
+      "id": "UQ5ai_tQQcKwIErh8_W8Ug",
+      "fileName": "UQ5ai_tQQcKwIErh8_W8Ug-1713393107-img_6148.jpeg",
+      "error": "terminated"
+    },
+    {
+      "id": "Qu0B9KSZQzmjj0wfHqf9bA",
+      "fileName": "Qu0B9KSZQzmjj0wfHqf9bA-1713393092-img_6122.jpeg",
+      "error": "terminated"
+    },
+    {
+      "id": "67288595",
+      "fileName": "67288595-1692647027-img_8801.mov",
+      "error": "terminated"
+    },
+    {
+      "id": "67288579",
+      "fileName": "67288579-1692646245-img_8676.mov",
+      "error": "terminated"
+    },
+    {
+      "id": "67288573",
+      "fileName": "67288573-1692645919-img_8674.jpeg",
+      "error": "terminated"
+    },
+    {
+      "id": "67288571",
+      "fileName": "67288571-1692645628-img_8836.jpeg",
+      "error": "fetch failed"
+    }
+  ],
+  "markdownCount": 78,
+  "postCount": 26,
+  "largeFiles": [
+    {
+      "fileName": "dDG1sakiTVC4JfDJEJUCMw-1733360428-gh019757.mp4",
+      "bytes": 119025447
+    },
+    {
+      "fileName": "T50FNqUGSDKpDINcUDw3oA-1733354942-gh019695.mp4",
+      "bytes": 390550197
+    },
+    {
+      "fileName": "boQ2wZhpSMiHdw1ubYNvOg-1729227940-img_9849.mov",
+      "bytes": 175329315
+    },
+    {
+      "fileName": "UnXK-R1tSXq9-PhmjOm41A-1727812968-img_9961.mov",
+      "bytes": 101928025
+    },
+    {
+      "fileName": "Z4ZKaivYR1ODVEITCWmVKg-1727811301-img_9855.mov",
+      "bytes": 224056093
+    },
+    {
+      "fileName": "CQqu6OmwTRKBk6Nzl_oa-Q-1727808208-img_9613.mov",
+      "bytes": 142402714
+    },
+    {
+      "fileName": "AN2EF5-MR2-JneSrUl5tmg-1724975839-img_4075.mov",
+      "bytes": 147244339
+    },
+    {
+      "fileName": "e6Ldjdj7SCWurl89pdPAlw-1724089665-seal-beach-junior-lifeguards-2024.mp4",
+      "bytes": 417426665
+    },
+    {
+      "fileName": "Ka4avN9LSOqAQCxo44qyew-1721139700-img_3948.mov",
+      "bytes": 280771823
+    },
+    {
+      "fileName": "OF9flkK_RzO_8oVTEP_u_Q-1720721239-img_8093.mov",
+      "bytes": 97561586
+    },
+    {
+      "fileName": "MJQi-JSTQLC3icTTXJN6fA-1720716416-img_3069.mov",
+      "bytes": 358695217
+    },
+    {
+      "fileName": "NLU4mxvPR9WF6HDoI5nT_A-1718077133-img_7769.mov",
+      "bytes": 284432822
+    },
+    {
+      "fileName": "OmuPwLPnSNuhFJdD7Wk6eA-1718073455-img_7593.mov",
+      "bytes": 227342584
+    },
+    {
+      "fileName": "AaBUD_QoQ1mA8i2r7QWLfg-1718072704-img_7590.mov",
+      "bytes": 273768672
+    },
+    {
+      "fileName": "C2pcTuVATm26jCEjD6Gxkw-1718053252-img_7382.mov",
+      "bytes": 155354587
+    },
+    {
+      "fileName": "RJzPOCKEQRKdFCjibSgmAw-1718051682-img_1968.mov",
+      "bytes": 167877483
+    },
+    {
+      "fileName": "Bpoa0FNiTHeTc5ewRg_hKw-1718050734-img_7238.mov",
+      "bytes": 95170093
+    },
+    {
+      "fileName": "A5OfmMlfQjWeIYgY0Q2uCQ-1718050619-img_7238.mov",
+      "bytes": 95170045
+    },
+    {
+      "fileName": "IWB_bol4SsGttzdlOhpOvA-1718040601-img_7593.mov",
+      "bytes": 185682526
+    },
+    {
+      "fileName": "BcFdNtP9QM-itbZWA38jFA-1718039325-img_7590.mov",
+      "bytes": 223951320
+    },
+    {
+      "fileName": "NhGD0xzgRIemsObfRfwYWw-1718035871-img_7382.mov",
+      "bytes": 155354603
+    },
+    {
+      "fileName": "NDd6hogsQaCa9nnVpS_ZKw-1713392658-img_5919.mov",
+      "bytes": 120538121
+    },
+    {
+      "fileName": "MTsXn44gR9SCuwkCf1bwJQ-1711427583-img_4482.mov",
+      "bytes": 110633656
+    },
+    {
+      "fileName": "R18KzNGTRvOOD9xwBWloyg-1709626496-img_4447.mov",
+      "bytes": 224200740
+    },
+    {
+      "fileName": "RSp79lCuTlSDsju50TEaSA-1709623465-img_4143.mov",
+      "bytes": 110567534
+    },
+    {
+      "fileName": "XeY1rhALTz28L-FIh1XVVw-1708108235-img_3561.mov",
+      "bytes": 161093200
+    },
+    {
+      "fileName": "MgM74nvRR7CXibfXqyi0Ug-1708108193-img_3573.mov",
+      "bytes": 110741610
+    },
+    {
+      "fileName": "IKy3xZTvQDSLvrR78KuWMQ-1706730527-img_2731.mov",
+      "bytes": 157412010
+    },
+    {
+      "fileName": "T1clTM8UTum_BfvFZjhmpw-1705467970-img_1506.mov",
+      "bytes": 306814999
+    },
+    {
+      "fileName": "alNMXcdgQ6OK5LxYH8DpAA-1705434991-img_1324.mov",
+      "bytes": 121188504
+    },
+    {
+      "fileName": "OWVY6B0-TBaoaOM6tGxHLg-1705013252-img_2659.mov",
+      "bytes": 112551559
+    },
+    {
+      "fileName": "BV7exn8OQLa9BL9vXheTJQ-1703293292-img_1638.mov",
+      "bytes": 131470352
+    },
+    {
+      "fileName": "L6EGDL5iSwaRqK7okbLl3Q-1703268957-img_1631.mov",
+      "bytes": 166417570
+    },
+    {
+      "fileName": "X33di6nlRdqXoRRMLOGOhw-1703267971-img_1539.mov",
+      "bytes": 107503708
+    },
+    {
+      "fileName": "HqywAkoAQ5WO8cEsN-VT7w-1701841367-img_0942.mov",
+      "bytes": 404141581
+    },
+    {
+      "fileName": "ShPGIsChSj-_2ZC3aJL1hA-1701736966-img_1060.mov",
+      "bytes": 99470212
+    },
+    {
+      "fileName": "QdHTB0q8QMarjZ008bb2Bw-1699983417-img_0411.mov",
+      "bytes": 106197811
+    },
+    {
+      "fileName": "PtyGOeSTRfCZNB0GhpNTbA-1699982415-img_0396.mov",
+      "bytes": 146099956
+    },
+    {
+      "fileName": "76204335-1696965465-sea-lion-splash-episode-8-1080p.mp4",
+      "bytes": 188246092
+    },
+    {
+      "fileName": "73696759-1695779316-img_0092.mov",
+      "bytes": 267190667
+    }
+  ]
+}
